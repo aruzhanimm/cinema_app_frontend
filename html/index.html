@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Serikbai Mansur - Personal Page</title>
+    <link rel="stylesheet" href="/static/index.css">
+</head>
+<body>
+
+    <div class="grid-layout">
+
+        <header class="header-section">
+            <nav class="navbar">
+                <div class="nav-logo">
+                    <img src="assets/IMG_4913.JPG" alt="Mansur" class="logo-img">
+                    <h1 class="main-heading">Serikbai Mansur</h1>
+                    <h2 class="sub-heading">2 course, SE - 2423</h2>
+                </div>
+                <ul class="nav-menu">
+                    <li class="nav-item"><a href="#about-section" class="nav-link">About Me</a></li>
+                    <li class="nav-item"><a href="#schedule-section" class="nav-link">Class Schedule</a></li>
+                    <li class="nav-item"><a href="#contact-section" class="nav-link">Contact</a></li>
+                </ul>
+            </nav>
+        </header>
+        
+        <div class="sidebar-menu-grid">
+            <h3 class="menu-heading">Navigation</h3>
+            <ul>
+                <li><a href="#about-section">About Me</a></li>
+                <li><a href="#schedule-section">Class Schedule</a></li>
+                <li><a href="#contact-section">Contact</a></li>
+                <li><a href="#card-row-start">Languages</a></li>
+            </ul>
+        </div>
+        
+        <div class="main-content-grid">
+            
+            <div id="about-section" class="content-box">
+                <h3 class="section-heading">About me</h3>
+                <p class="paragraph-text">Hello, my name is Mansur. As you can see I am a second course student at the university AITU. I am passionate about learning new technologies and enhancing my skills in software engineering. You assume I am always learning but you're wrong about me i also fascinating in formula 1.</p>
+            </div>
+            
+            <div class="interests-section content-box">
+                <h3 class="section-heading">My Interests</h3>
+                <ol class="list-text">
+                    <li>Formula 1</li>
+                    <li>Wrestling</li>
+                    <li>Watch Films</li>
+                </ol>
+                <ul class="list-text">
+                    <li>formula1.com</li>
+                    <li>inoriginal.com</li>
+                    <li>instagram.com</li>
+                </ul>
+            </div>
+            
+            <div class="image-link-section content-box">
+                <img src="https://i.ytimg.com/vi/QzihiIGJzbo/maxresdefault.jpg" alt="Lewis Hamilton" id="featured-image">
+                <a href="https://www.formula1.com/en.html" class="link-style">Formula 1</a>
+            </div>
+            
+            <button type="button" class="btn transition-effect">Click me!</button>
+            <br>
+            <br>
+
+            <div id="schedule-section" class="content-box">
+                <h2 class="section-heading">Weekly class schedule</h2>
+                <table border="1" cellpadding="8" cellspacing="0" id="schedule-table">
+                    <tr>
+                        <th>Subject</th>
+                        <th>Day</th>
+                        <th>Time</th>
+                    </tr>
+                    <tr>
+                        <td>Mathematics</td>
+                        <td>Monday</td>
+                        <td>10:00 - 11:30</td>
+                    </tr>
+                    <tr>
+                        <td>Programming</td>
+                        <td>Wednesday</td>
+                        <td>12:00 - 13:30</td>
+                    </tr>
+                    <tr>
+                        <td>Computer Science</td>
+                        <td>Friday</td>
+                        <td>14:00 - 15:30</td>
+                    </tr>
+                    <tr>
+                        <td>English</td>
+                        <td>Tuesday</td>
+                        <td>09:00 - 10:30</td>
+                    </tr>
+                    <tr>
+                        <td>Physical Education</td>
+                        <td>Thursday</td>
+                        <td>11:00 - 12:30</td>
+                    </tr>
+                </table>
+            </div>
+
+            <div class="content-box">
+                <h2 class="section-heading">My mood Today</h2>
+                <p class="paragraph-text">🚀💪😊</p>
+            </div>
+
+            <div class="content-box">
+                <h2 class="section-heading">User Information Form</h2>
+                <form action="/submit_form" method="post" id="user-form">
+                    <label for="name" class="form-label">Name:</label><br>
+                    <input type="text" id="name" name="name" placeholder="Enter your name" class="form-input"><br><br>
+                    
+                    <label for="email" class="form-label">Email:</label><br>
+                    <input type="email" id="email" name="email" placeholder="Enter your email" class="form-input"><br><br>
+                    
+                    <label for="age" class="form-label">Age:</label><br>
+                    <input type="number" id="age" name="age" placeholder="Enter your age" class="form-input"><br><br>
+                    
+                    <input type="submit" value="Submit" class="submit-btn">
+                </form>
+            </div>
+            
+            <h2 class="section-heading" id="card-row-start">Languages that I know</h2>
+            <div class="card-row-container">
+                <div class="card">
+                    <img src="https://repository-images.githubusercontent.com/210446181/d4652500-de27-11e9-8a9b-598acb43bcdf" alt="Python" class="card-image">
+                    <h4 class="card-title">Python</h4>
+                    <p class="card-text">I learn python from 15 y.o.</p>
+                    <button type="button" class="btn card-button">Learn more</button>
+                </div>
+                
+                <div class="card">
+                    <img src="https://mir-s3-cdn-cf.behance.net/project_modules/fs/7f044c78216145.5dd82f49918a7.jpg" alt="Java" class="card-image">
+                    <h4 class="card-title">Java</h4>
+                    <p class="card-text">Java is my second language. I learn java when i graduated and study on 1 course of AITU</p>
+                    <button type="button" class="btn card-button">Learn more</button>
+                </div>
+                
+                <div class="card">
+                    <img src="https://cdn-images-1.medium.com/v2/resize:fit:1200/1*GeJvLI8TNo3EQsXCj8oPcQ.png" alt="Go" class="card-image">
+                    <h4 class="card-title">Go</h4>
+                    <p class="card-text">I this year i'll be learn this language</p>
+                    <button type="button" class="btn card-button">Learn more</button>
+                </div>
+            </div>
+
+            <div class="content-box">
+                <h2 class="section-heading">Advanced Styling Example</h2>
+                <p class="paragraph-text advanced-text">This text has a decorative element before it.</p>
+            </div>
+
+            <h2 class="section-heading">My Image Gallery</h2>
+            <div class="gallery-container">
+                <div class="gallery-item">
+                    <img src="https://picsum.photos/300/300?random=10" alt="Gallery Image 1" class="gallery-image">
+                    <div class="caption-overlay">Formula 1</div>
+                </div>
+                <div class="gallery-item">
+                    <img src="https://picsum.photos/300/300?random=11" alt="Gallery Image 2" class="gallery-image">
+                    <div class="caption-overlay">Code Editor</div>
+                </div>
+                <div class="gallery-item">
+                    <img src="https://picsum.photos/300/300?random=12" alt="Gallery Image 3" class="gallery-image">
+                    <div class="caption-overlay">AITU Campus</div>
+                </div>
+                <div class="gallery-item">
+                    <img src="https://picsum.photos/300/300?random=13" alt="Gallery Image 4" class="gallery-image">
+                    <div class="caption-overlay">Python Script</div>
+                </div>
+                <div class="gallery-item">
+                    <img src="https://picsum.photos/300/300?random=14" alt="Gallery Image 5" class="gallery-image">
+                    <div class="caption-overlay">Java Logo</div>
+                </div>
+                <div class="gallery-item">
+                    <img src="https://picsum.photos/300/300?random=15" alt="Gallery Image 6" class="gallery-image">
+                    <div class="caption-overlay">Wrestling Ring</div>
+                </div>
+                <div class="gallery-item">
+                    <img src="https://picsum.photos/300/300?random=16" alt="Gallery Image 7" class="gallery-image">
+                    <div class="caption-overlay">Tech Books</div>
+                </div>
+                <div class="gallery-item">
+                    <img src="https://picsum.photos/300/300?random=17" alt="Gallery Image 8" class="gallery-image">
+                    <div class="caption-overlay">Astana Skyline</div>
+                </div>
+                <div class="gallery-item">
+                    <img src="https://picsum.photos/300/300?random=18" alt="Gallery Image 9" class="gallery-image">
+                    <div class="caption-overlay">Gaming Setup</div>
+                </div>
+            </div>
+
+        </div> <footer class="footer-section">
+            <p>&copy; 2025 Serikbai Mansur. All rights reserved. | Layout powered by CSS Grid.</p>
+        </footer>
+
+    </div> </body>
+</html>
