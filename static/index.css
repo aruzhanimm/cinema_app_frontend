@@ -18,35 +18,32 @@ body {
     margin-top: 4rem;
 }
 
-/* ------------------------------------------- */
-/* Custom Media Queries for Typography (Like Task 0) */
-/* ------------------------------------------- */
+
+
 .section-heading {
-    /* Mobile default font size */
     font-size: 1.75rem;
     color: var(--primary-color);
     font-weight: 700;
 }
 
-/* Tablet (md breakpoint: 768px) */
+
+
 @media (min-width: 768px) {
     .section-heading {
-        font-size: 2.25rem; /* Larger font on tablet */
+        font-size: 2.25rem;
     }
-
-    /* .main-content { padding-top: 30px; } - Удалено, т.к. margin-top теперь используется для отступа от навбара */
 }
 
-/* Desktop (lg breakpoint: 992px) */
+
+
 @media (min-width: 992px) {
     .section-heading {
-        font-size: 3rem; /* Largest font on desktop */
+        font-size: 3rem;
     }
 }
 
-/* ------------------------------------------- */
-/* Custom Component Styling */
-/* ------------------------------------------- */
+
+
 .sidebar {
     background-color: #ffffff;
     border-radius: 8px;
@@ -55,15 +52,21 @@ body {
     margin-bottom: 20px;
 }
 
+
+
 .project-card {
     border-radius: 8px;
     transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
+
+
 .project-card:hover {
     transform: translateY(-5px);
     box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.1);
 }
+
+
 
 .footer {
     background-color: #343a40;
@@ -72,8 +75,8 @@ body {
     text-align: center;
 }
 
-/* Custom visibility using media queries (Like Task 1) */
-/* Hide the subtle separator on small mobile screens to save space */
+
+
 .separator {
     display: none;
 }
