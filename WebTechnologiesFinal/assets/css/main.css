@@ -47,7 +47,12 @@ nav {
 }
 
 
-.navbar-nav { display: flex; }
+.navbar-nav {
+     display: flex;
+     flex-direction: row;
+     gap: 20px;
+
+}
 .navbar-nav li:not(:last-child) { margin-right: 60px; }
 
 
@@ -280,78 +285,96 @@ nav {
 }
 
 
+
 .banner {
     margin-bottom: 60px;
 }
 
 
-.banner-card {
-    position: relative;
-    height: 600px;
-    overflow: hidden;
+.banner-carousel {
     border-radius: 20px;
-    cursor: pointer;
+    overflow: hidden;
+    position: relative;
 }
-
-
-.banner-img {
-    object-position: top;
+.carousel-item img {
+    height: 600px;
+    object-fit: cover;
+    transition:transform 0.6 ease;
 }
-
-
-.banner-card:hover .banner-img {
-    transform: scale(1.1);
+.carousel-item:hover img {
+    transform: scale(1.05);
 }
-
-
-.banner-card .card-content {
-    position: absolute;
-    right: 80px;
-    bottom: 60px;
+.carousel-caption {
+    position:absolute;
     left: 80px;
+    bottom: 60px;
+    right: 80px;
+    text-align: left;
+    padding:20px 0;
+    border-radius: 10px;
 }
-
-
-.banner-card .card-info {
+.card-info {
     display: flex;
     align-items: center;
-    margin-bottom: 20px;
+    flex-wrap: wrap;
+    gap:15px;
+    margin-bottom: 10px;
+}
+.card-info span {
+  display: flex;
+  align-items: center;
+  font-weight: 600;
+  color: var(--white);
+  font-size: 1rem;
+}
+
+.card-info ion-icon {
+  font-size: 20px;
+  color: var(--azure);
+  margin-right: 5px;
+}
+
+.quality {
+  background: var(--azure);
+  color: var(--white);
+  padding: 2px 8px;
+  border-radius: 6px;
+  font-weight: 700;
 }
 
 
-.banner-card .card-info div {
-    display: flex;
-    align-items: center;
-    margin-right: 20px;
+.card-title {
+  font-size: 2.8rem;
+  color: var(--white);
+  text-shadow: 2px 0 2px rgba(0, 0, 0, 0.6);
+  margin: 0;
+}
+
+.carousel-control-prev-icon,
+.carousel-control-next-icon {
+  background-color: rgba(0, 0, 0, 0.6);
+  border-radius: 50%;
+  padding: 15px;
+  transition: background-color 0.3s ease;
+}
+
+.carousel-control-prev-icon:hover,
+.carousel-control-next-icon:hover {
+  background-color: rgba(255, 255, 255, 0.4);
 }
 
 
-.banner-card .card-info ion-icon {
-    font-size: 20px;
-    color: var(--azure);
-    margin-right: 5px;
+.carousel-indicators [data-bs-target] {
+  background-color: var(--azure);
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  opacity: 0.8;
 }
 
-
-.banner-card .card-info span {
-    font-weight: var(--fw-6);
+.carousel-indicators .active {
+  opacity: 1;
 }
-
-
-.banner-card .card-info .quality {
-    background: var(--azure);
-    padding: 2px 5px;
-    border-radius: 5px;
-    font-weight: var(--fw-7);
-}
-
-
-.banner-card .card-title {
-    font-size: 3em;
-    color: var(--white);
-    text-shadow: 2px 0 2px #0007;
-}
-
 
 .movies {
     margin-bottom: 60px;
