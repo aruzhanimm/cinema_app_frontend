@@ -150,6 +150,135 @@ nav {
     color: var(--light-azure);
 }
 
+#registerBox {
+  display: none; 
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 400px;
+  height: 450px;
+  border: 2px solid rgba(255,255,255, .5);
+  background: transparent;
+  padding: 30px;
+  border-radius: 40px;
+  box-shadow: 0 0 10px rgba(0,0,0,0.5);
+  z-index: 1000;
+  backdrop-filter: blur(15px);
+  
+}
+
+#registerBox h2{
+    font-size: 2em;
+    color:#fff;
+    text-align: center;
+}
+
+#registerBox .input-box{
+    position: relative;
+    width: 310px;
+    margin: 30px 0;
+    border-bottom: 2px solid #fff;
+}
+
+#registerBox .input-box label{
+    position: absolute;
+    top:50%;
+    left:5px;
+    transform:translateY(-50%);
+    font-size: 1em;
+    color:#fff;
+    pointer-events: none;
+    transition: .5s;
+}
+#passwordMessage{
+    font-size: 14px;
+    margin-top: 5px;
+    font-weight: 500;
+}
+#passwordMessage.invalid {
+    color:red;
+}
+
+#passwordMessage{
+    color:green;
+}
+
+#registerBox .input-box input:focus~label,
+#registerBox .input-box input:valid~label{
+    top: -5px;
+}
+
+#registerBox .input-box input{
+    width: 100%;
+    height:50px;
+    background: transparent;
+    border:none;
+    font-size: 1em;
+    color: #fff;
+    padding: 0 35px 0 5px ;
+}
+
+#registerBox .icon {
+    position: absolute;
+    right:8px;
+    color:#fff;
+    font-size:1.2em;
+    line-height: 57px;
+}
+
+#registerBox .remember-forgot {
+    margin:-15px 0 15px;
+    font-size: .9em;
+    color:#fff;
+    display:flex;
+    justify-content: space-between;
+}
+
+#registerBox .remember-forgot label input {
+    margin-right: 3px;
+}
+
+#registerBox .remember-forgot a {
+    color: #fff;
+    text-decoration: none;
+}
+
+#registerBox .remember-forgot a:hover {
+    text-decoration: underline;
+}
+
+#registerBox button {
+    width:100% ;
+    height: 40px;
+    background-color: #ffff;
+    border:none;
+    outline:none;
+    border-radius: 40px;
+    cursor:pointer;
+    font-size:1em;
+    color:black;
+    font-weight: 500;
+}
+
+#registerBox .register-link {
+    font-size: .9em;
+    color:#fff;
+    text-align: center;
+    margin:25px 0 10px;
+}
+
+#registerBox .register-link p a {
+    color:white;
+    text-decoration: none;
+    font-weight:600;
+}
+
+#registerBox .register-link p a:hover {
+    text-decoration: underline;
+
+}
+
 
 .banner {
     margin-bottom: 60px;
