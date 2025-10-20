@@ -574,7 +574,7 @@ input ~ .checked-radio-bg {
     font-size: var(--fs-sm);
     font-weight: var(--fw-5);
     border-radius: 15px;
-    color: car(--white);
+    color: var(--white);
 }
 
 
