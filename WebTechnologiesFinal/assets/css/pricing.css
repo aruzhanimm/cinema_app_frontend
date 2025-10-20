@@ -1,0 +1,337 @@
+.pricing-section {
+    padding: 80px var(--px);
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.pricing-subtitle {
+    text-align: center;
+    font-size: var(--fs-lg);
+    color: var(--off-white);
+    margin-bottom: 60px;
+    opacity: 0.8;
+}
+
+.pricing-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+    margin-bottom: 80px;
+}
+
+.pricing-card {
+    background: var(--oxford-blue);
+    padding: 40px 30px;
+    border-radius: 20px;
+    border: 2px solid var(--oxford-blue-50);
+    text-align: center;
+    position: relative;
+    transition: all 0.3s ease;
+}
+
+.pricing-card:hover {
+    transform: translateY(-10px);
+    border-color: var(--light-azure);
+    box-shadow: 0 10px 30px rgba(33, 150, 243, 0.2);
+}
+
+.pricing-card.featured {
+    border-color: var(--light-azure);
+    background: linear-gradient(135deg, var(--oxford-blue) 0%, var(--rich-black-fogra-30) 100%);
+    transform: scale(1.05);
+}
+
+.pricing-card.featured:hover {
+    transform: scale(1.05) translateY(-10px);
+}
+
+.popular-badge {
+    position: absolute;
+    top: -15px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: var(--light-azure);
+    color: var(--white);
+    padding: 8px 20px;
+    border-radius: 20px;
+    font-size: var(--fs-x-sm);
+    font-weight: var(--fw-6);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.plan-header {
+    margin-bottom: 30px;
+}
+
+.plan-name {
+    font-size: 28px;
+    font-weight: var(--fw-7);
+    color: var(--white);
+    margin-bottom: 15px;
+}
+
+.plan-price {
+    display: flex;
+    align-items: baseline;
+    justify-content: center;
+    gap: 5px;
+    margin-bottom: 10px;
+}
+
+.currency {
+    font-size: 24px;
+    font-weight: var(--fw-6);
+    color: var(--light-azure);
+}
+
+.amount {
+    font-size: 48px;
+    font-weight: var(--fw-7);
+    color: var(--white);
+}
+
+.period {
+    font-size: var(--fs-sm);
+    color: var(--off-white);
+    opacity: 0.7;
+}
+
+.plan-description {
+    font-size: var(--fs-sm);
+    color: var(--off-white);
+    opacity: 0.8;
+}
+
+.plan-features {
+    list-style: none;
+    margin-bottom: 40px;
+    text-align: left;
+}
+
+.feature-item {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    padding: 12px 0;
+    border-bottom: 1px solid var(--oxford-blue-50);
+}
+
+.feature-item:last-child {
+    border-bottom: none;
+}
+
+.feature-icon {
+    font-size: 20px;
+    flex-shrink: 0;
+}
+
+.feature-item:not(.disabled) .feature-icon {
+    color: var(--light-azure);
+}
+
+.feature-item.disabled .feature-icon {
+    color: var(--live-indicator);
+}
+
+.feature-item.disabled span {
+    opacity: 0.5;
+    text-decoration: line-through;
+}
+
+.feature-item span {
+    font-size: var(--fs-sm);
+    color: var(--off-white);
+}
+
+.plan-btn {
+    width: 100%;
+    padding: 15px;
+    border: none;
+    border-radius: 15px;
+    font-size: var(--fs-sm);
+    font-weight: var(--fw-6);
+    cursor: pointer;
+    transition: all 0.3s ease;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.basic-btn {
+    background: var(--oxford-blue-50);
+    color: var(--off-white);
+    border: 2px solid var(--oxford-blue-50);
+}
+
+.basic-btn:hover {
+    background: var(--light-azure);
+    color: var(--white);
+    border-color: var(--light-azure);
+}
+
+.standard-btn {
+    background: var(--light-azure);
+    color: var(--white);
+    border: 2px solid var(--light-azure);
+}
+
+.standard-btn:hover {
+    background: var(--azure);
+    border-color: var(--azure);
+    transform: translateY(-2px);
+}
+
+.premium-btn {
+    background: transparent;
+    color: var(--light-azure);
+    border: 2px solid var(--light-azure);
+}
+
+.premium-btn:hover {
+    background: var(--light-azure);
+    color: var(--white);
+    transform: translateY(-2px);
+}
+
+/* FAQ Section */
+.faq-section {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.faq-heading {
+    font-size: 32px;
+    font-weight: var(--fw-6);
+    text-align: center;
+    margin-bottom: 40px;
+    color: var(--white);
+}
+
+.faq-container {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.faq-item {
+    background: var(--oxford-blue);
+    border-radius: 15px;
+    border: 1px solid var(--oxford-blue-50);
+    overflow: hidden;
+}
+
+.faq-question {
+    padding: 20px 25px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    cursor: pointer;
+    transition: background 0.3s ease;
+}
+
+.faq-question:hover {
+    background: var(--rich-black-fogra-30);
+}
+
+.faq-question span {
+    font-size: var(--fs-md);
+    font-weight: var(--fw-6);
+    color: var(--white);
+}
+
+.faq-icon {
+    font-size: 20px;
+    color: var(--light-azure);
+    transition: transform 0.3s ease;
+}
+
+.faq-answer {
+    padding: 0 25px;
+    max-height: 0;
+    overflow: hidden;
+    transition: all 0.3s ease;
+}
+
+.faq-answer p {
+    padding-bottom: 20px;
+    font-size: var(--fs-sm);
+    line-height: 1.6;
+    color: var(--off-white);
+}
+
+.faq-item.active .faq-answer {
+    max-height: 200px;
+}
+
+.faq-item.active .faq-icon {
+    transform: rotate(180deg);
+}
+
+
+@media screen and (max-width: 1024px) {
+    .pricing-card.featured {
+        transform: none;
+    }
+
+    .pricing-card.featured:hover {
+        transform: translateY(-10px);
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .pricing-container {
+        grid-template-columns: 1fr;
+        max-width: 400px;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .pricing-card {
+        padding: 30px 20px;
+    }
+
+    .plan-price {
+        gap: 3px;
+    }
+
+    .amount {
+        font-size: 40px;
+    }
+}
+
+@media screen and (max-width: 575px) {
+    .pricing-section {
+        padding: 60px var(--px);
+    }
+
+    .faq-question {
+        padding: 15px 20px;
+    }
+
+    .faq-question span {
+        font-size: var(--fs-sm);
+    }
+
+    .faq-answer p {
+        font-size: var(--fs-x-sm);
+    }
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.pricing-card {
+    animation: fadeInUp 0.6s ease-out;
+}
+
+.pricing-card:nth-child(1) { animation-delay: 0.1s; }
+.pricing-card:nth-child(2) { animation-delay: 0.2s; }
+.pricing-card:nth-child(3) { animation-delay: 0.3s; }
