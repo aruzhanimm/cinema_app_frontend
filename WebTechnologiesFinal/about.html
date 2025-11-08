@@ -6,72 +6,192 @@
     <title>About Moriginal</title>
     <link rel="stylesheet" href="assets/css/about.css">
     <link rel="stylesheet" href="assets/css/main.css">
-
+    <link rel="stylesheet" href="assets/css/media.css">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 </head>
 <body>
-    <header> 
-        <div class="logo">
-            <a href="index.html">Moriginal</a>
-        </div>
-        <nav>
-            <ul>
-                <li><a href="index.html">Home</a></li>
-            </ul>
-        </nav>
-    </header>
+    <div class="container">
+        <header>
+            <div class="navbar">
+                <button class="navbar-menu-btn active">
+                    <span class="one"></span>
+                    <span class="two"></span>
+                    <span class="three"></span>
+                </button>
+                <a href="index.html" class="navbar-brand">
+                    <span style="font-family: 'Montserrat', sans-serif; font-size: 24px; font-weight: bold;">MORIGINAL</span>
+                </a>
+
+                <nav class="">
+                    <ul class="navbar-nav">
+                        <li><a href="index.html" class="navbar-link">Home</a></li>
+                        <li><a href="about.html" class="navbar-link">About Us</a></li>
+                        <li><a href="contacts.html" class="navbar-link">Contacts</a></li>
+                        <li><a href="pricing.html" class="navbar-link">Pricing</a></li>
+                    </ul>
+                </nav>
+
+                <div class="navbar-actions">
+                    <form action="#" class="navbar-form">
+                        <input type="text" name="search" placeholder="I'm looking for ..." class="navbar-form-search">
+                        <button class="navbar-form-btn">
+                            <ion-icon name="search-outline"></ion-icon>
+                        </button>
+                        <button class="navbar-form-close">
+                            <ion-icon name="close-circle-outline"></ion-icon>
+                        </button>
+                    </form>
+
+                    <button class="navbar-search-btn">
+                        <ion-icon name="search-outline"></ion-icon>
+                    </button>
+
+                    <a href="#" class="navbar-signin">
+                        <span>Sign in</span>
+                        <ion-icon name="log-in-outline"></ion-icon>
+                    </a>
+                </div>
+            </div>
+        </header>
 
     <main class="about-section">
         <h2 class="section-heading">About Us</h2>
-        <div class="about-container">
-            <p class="about-description">
-                Moriginal is a movie streaming website that brings together all your favourite films in one place.
-                Our mission is to provide users with a modern,fast,and user-friendly experience for watching high-quality movies online.
-                We constantly improve our interface, expand our catalog, and update the platform to provide users with the best viewing experience.
-                With innovative technology and a dedicated team, Moriginal continues to grow and set new standards in online entertainment.
-            </p>
-            <div class="about-statistics">
-                <div class="statistic-items">
-                    <ion-icon name="people-outline"></ion-icon>
-                    <h3>40+ million</h3>
-                    <p>unique users per month</p>
-                </div>
-                <div class="statistic-items">
-                    <ion-icon name="time-outline"></ion-icon>
-                    <h3>2.6 billion hours</h3>
-                    <p>total viewing per years</p>
-                </div>
-                <div class="statistic-items">
-                    <ion-icon name="cash-outline"></ion-icon>
-                    <h3>3 monetization models</h3>
-                    <p> SVOD / AVOD / EST</p>
+
+        <div class="about-block">
+            <div class="about-text">
+                <p>Moriginal is a movie streaming website that brings together all your favourite films in one place.
+                    Our mission is to provide users with a modern,fast,and user-friendly experience for watching high-quality movies online.
+                    We constantly improve our interface, expand our catalog, and update the platform to provide users with the best viewing experience.
+                    With innovative technology and a dedicated team, Moriginal continues to grow and set new standards in online entertainment.
+                </p>
+            </div>
+            <div class="about-image">
+                <img src="images/aboutlogo.png" alt="Moriginal platform">
+            </div>
+        </div>
+        
+        <div class="about-block reverse">
+            <div class="about-text">
+                <h3> Our Achievements</h3>
+                <div class="about-statictics">
+                    <div class="statistic-items">
+                        <ion-icon name="people-outline"></ion-icon>
+                        <h3>40+ million</h3>
+                        <p><strong> unique users per month</strong></p>
+                    </div>
+                    <div class="statistic-items">
+                        <ion-icon name="time-outline"></ion-icon>
+                        <h3> 2.6 billion hours</h3>
+                        <p><strong> total viewing per yea</strong></p>
+                    </div>
+                    <div class="statistic-items">
+                        <ion-icon name="cash-outline"></ion-icon>
+                        <h3> 3 monetization models</h3>
+                        <p><strong> SVOD / AVOD / EST</strong></p>
+                    </div>
                 </div>
             </div>
-            <div class="about-technologies">
-                <ion-icon name="desktop-outline"></ion-icon>
+            <div class="about-image">
+                <img src="images/statistics.JPG" alt="Statistics">
+            </div>
+        </div>
+
+        <div class="about-block">
+            <div class="about-text">
                 <h3>Technologies</h3>
                 <ul>
                     <li>The service is available on any platform and is updated weekly.</li>
-                    <li>The #1 app in Kazakhstan on Smart TVs from LG, Samsung, Sony, Philips, and Toshiba.</li>
+                    <li>The <strong>#1</strong> app in Kazakhstan on Smart TVs from LG, Samsung, Sony, Philips, and Toshiba.</li>
                     <li>Our own data and supply management platform, analytics and statistics system.</li>
                 </ul>
             </div>
-            
-            <div class="about-career">
-                <ion-icon name="briefcase-outline"></ion-icon>
-                <h3> Team & Career</h3>
-                <p> Moriginal is more than just a movie platform — it’s a place where creativity and technology come together.
+            <div class="about-image">
+                <img src="images/technologies.JPG" alt="Technologies">
+            </div>
+        </div>
+
+        <div class="about-block reverse">
+            <div class="about-text">
+                <h3>Team and Career</h3>
+                <p><strong>Moriginal</strong> is more than just a movie platform — it’s a place where creativity and technology come together.
                     Our team includes developers, designers, marketers, and content creators who are passionate about innovation and quality.
                     Every member contributes to improving user experience, expanding the platform’s functionality, and building a strong digital entertainment brand.
                     We believe in growth, teamwork, and continuous learning, and we’re always looking for talented people ready to join us on this exciting journey.
                 </p>
             </div>
+            <div class="about-image">
+                <img src="images/team.JPG" alt="Team">
+            </div>
         </div>
-        <button class="read-more">READ MORE</button>
+        
+        <div class="read-more-section">
+            <button class="read-more">READ MORE</button>
+            <div class="hidden-text">
+                <p>
+                    At <strong>Moriginal</strong>, we believe that entertainment connects people and creates shared experiences that bring joy, inspiration, and reflection.
+                    Our goal is to inspire, engage, and bring stories to every screen — whether it’s a blockbuster movie, an independent film, or an inspiring documentary.
+                    We aim to make every viewer feel part of something bigger, where every story has the power to move hearts and spark imagination.
+                </p>
+                <p>
+                    We are constantly improving our technology and expanding our collection to meet the diverse tastes of our global audience. 
+                    From cutting-edge streaming quality to personalized recommendations, we strive to make Moriginal not just a platform, but a destination for all movie lovers.
+                </p>
+                <p><strong>Stay tuned — we’re just getting started!</strong></p>
+            </div>
+        </div>
     </main>
+    
+    <footer>
+        <div class="footer-content">
+            <div class="footer-brand">
+                <span class="footer-logo" style="font-family: 'Montserrat', sans-serif; font-size: 32px; font-weight: bold;">MORIGINAL</span>
+                <p class="slogan">Movies & TV Shows, Online cinema, Movie database HTML Template.</p>
+                <div class="social-link">
+                    <a href="#"><ion-icon name="logo-facebook"></ion-icon></a>
+                    <a href="#"><ion-icon name="logo-twitter"></ion-icon></a>
+                    <a href="#"><ion-icon name="logo-instagram"></ion-icon></a>
+                    <a href="#"><ion-icon name="logo-tiktok"></ion-icon></a>
+                    <a href="#"><ion-icon name="logo-youtube"></ion-icon></a>
+                </div>
+            </div>
+
+            <div class="footer-links">
+                <ul>
+                    <h4 class="link-heading">Moriginal</h4>
+                    <li class="link-item"><a href="index.html">Home</a></li>
+                    <li class="link-item"><a href="pricing.html">Pricing plans</a></li>
+                    <li class="link-item"><a href="contacts.html">Contacts</a></li>
+                </ul>
+
+                <ul>
+                    <h4 class="link-heading">Help</h4>
+                    <li class="link-item"><a href="#">Account & Billing</a></li>
+                    <li class="link-item"><a href="#">Supported Devices</a></li>
+                    <li class="link-item"><a href="#">Accessibility</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-copyright">
+            <div class="copyright">
+                <p>&copy; copyright 2025 Moriginal</p>
+            </div>
+
+            <div class="wrapper">
+                <a href="privacy.html">Privacy policy</a>
+            </div>
+        </div>
+    </footer>
+</div>
     
     
     <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
     <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
-    
+    <script>
+        $(document).ready(function(){
+            $(".read-more").click(function(){
+                $(".hidden-text").slideToggle(600);
+            });
+        });
+    </script>
 </body>
 </html>
