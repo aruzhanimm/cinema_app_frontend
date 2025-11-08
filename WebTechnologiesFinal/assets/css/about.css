@@ -108,7 +108,6 @@
     transform: scale(1.03);
   }
 }
-
 .about-text {
   animation: breathe 5s ease-in-out infinite;
 }
