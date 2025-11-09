@@ -68,6 +68,59 @@ navbarFormCloseBtn.addEventListener('click', searchBarIsActive);
 
 
 
+  const loginForm = document.getElementById("loginForm");
+  const confettiButton = document.querySelector(".confetti-button");
+  if(confettiButton && loginForm){
+    confettiButton.addEventListener("click",(e)=>{
+      if(!loginForm.checkValidity()){
+        loginForm.reportValidity();
+        return;
+      }
+
+      e.preventDefault();
+
+      confetti ({
+        particleCount: 150,
+        spread: 120,
+        origin: { y: 0.6 }
+      });
+
+      if (registerBox) {
+        registerBox.classList.add("fade-out");
+        setTimeout(() => {
+          registerBox.style.display = "none";
+          showSuccessMessage(); 
+        }, 600);
+      } else {
+        
+        showSuccessMessage();
+      }
+    });
+  }
+  function showSuccessMessage() {
+    if (document.querySelector(".success-message")) return;
+
+    const message = document.createElement("div");
+    message.classList.add("success-message");
+    message.innerHTML = `
+      <span>You have successfully joined!</span>
+      <button class="close-success" aria-label="Close">&times;</button>
+    `;
+    document.body.appendChild(message);
+
+    setTimeout(() => message.classList.add("visible"), 100);
+
+    const closeBtn = message.querySelector(".close-success");
+    closeBtn.addEventListener("click", () => removeMessage(message));
+
+    setTimeout(() => removeMessage(message), 2000);
+  }
+
+  function removeMessage(message) {
+    if (!message) return;
+    message.classList.remove("visible");
+    setTimeout(() => message.remove(), 200); 
+  }
   
   const trailerModal = document.getElementById('trailerModal');
   const trailerFrame = document.getElementById('trailerFrame');
@@ -109,7 +162,6 @@ navbarFormCloseBtn.addEventListener('click', searchBarIsActive);
       trailerFrame.src = '';
     }
   });
-
 
 
   

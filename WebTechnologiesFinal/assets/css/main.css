@@ -197,8 +197,9 @@ nav {
 #registerBox .input-box {
   position: relative;
   width: 310px;
-  margin: 30px 0;
+  margin: 30px 0 px 0;
   border-bottom: 2px solid #fff;
+  overflow: visible;
 }
 
 #registerBox .input-box label {
@@ -289,11 +290,12 @@ nav {
 #passwordMessage {
   position: absolute;
   left: 0;
-  bottom: -40px; 
+  bottom: -30px; 
   display: block;
   font-size: 13px;
   line-height: 1.2;
   font-weight: 500;
+  pointer-events: none;
 }
 
 #passwordMessage.valid   { color: #00ff7f; }
@@ -328,11 +330,49 @@ nav {
 #registerBox .input-box .toggle-eye:hover {
   color: #fff;
 }
-#passwordMessage{
-  position: absolute;
-  left: 0;
-  bottom: -22px;  
-  display: block;
+
+.success-message {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) scale(0.9);
+  background-color: white;
+  color: green;
+  font-size: 1.2rem;
+  font-weight: 600;
+  padding: 18px 28px;
+  border-radius: 12px;
+  transition: all 0.4s ease;
+  z-index: 2000;
+  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+}
+
+.success-message.visible {
+  opacity: 1;
+  transform: translate(-50%, -50%) scale(1);
+}
+
+.close-success {
+  background: none;
+  border: none;
+  color: white;
+  font-size: 1.6rem;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.close-success:hover {
+  color: #ff4d4d;
+  transform: scale(1.1);
+}
+#registerBox.fade-out {
+  opacity: 0;
+  transform: scale(0.95);
+  transition: all 0.6s ease;
 }
 
 
