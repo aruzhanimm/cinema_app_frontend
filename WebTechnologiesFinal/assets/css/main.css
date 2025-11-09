@@ -155,8 +155,24 @@ nav {
     color: var(--light-azure);
 }
 
+/*-- LOG-IN--*/
+#registerBox .close {
+  position: absolute;
+  top: 15px;
+  right: 20px;
+  color: #fff;
+  font-size: 28px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+#registerBox .close:hover {
+  color: #ff6961;
+}
+
 #registerBox {
-  display: none; 
+  display: none;
   position: fixed;
   top: 50%;
   left: 50%;
@@ -170,120 +186,154 @@ nav {
   box-shadow: 0 0 10px rgba(0,0,0,0.5);
   z-index: 1000;
   backdrop-filter: blur(15px);
-  
 }
 
-#registerBox h2{
-    font-size: 2em;
-    color:#fff;
-    text-align: center;
+#registerBox h2 {
+  font-size: 2em;
+  color: #fff;
+  text-align: center;
 }
 
-#registerBox .input-box{
-    position: relative;
-    width: 310px;
-    margin: 30px 0;
-    border-bottom: 2px solid #fff;
+#registerBox .input-box {
+  position: relative;
+  width: 310px;
+  margin: 30px 0;
+  border-bottom: 2px solid #fff;
 }
 
-#registerBox .input-box label{
-    position: absolute;
-    top:50%;
-    left:5px;
-    transform:translateY(-50%);
-    font-size: 1em;
-    color:#fff;
-    pointer-events: none;
-    transition: .5s;
-}
-#passwordMessage{
-    font-size: 14px;
-    margin-top: 5px;
-    font-weight: 500;
-}
-#passwordMessage.invalid {
-    color:red;
+#registerBox .input-box label {
+  position: absolute;
+  top: 50%;
+  left: 5px;
+  transform: translateY(-50%);
+  font-size: 1em;
+  color: #fff;
+  pointer-events: none;
+  transition: .5s;
 }
 
-#passwordMessage{
-    color:green;
+#registerBox .input-box input:focus ~ label,
+#registerBox .input-box input:valid ~ label {
+  top: -5px;
 }
 
-#registerBox .input-box input:focus~label,
-#registerBox .input-box input:valid~label{
-    top: -5px;
-}
-
-#registerBox .input-box input{
-    width: 100%;
-    height:50px;
-    background: transparent;
-    border:none;
-    font-size: 1em;
-    color: #fff;
-    padding: 0 35px 0 5px ;
+#registerBox .input-box input {
+  width: 100%;
+  height: 50px;
+  background: transparent;
+  border: none;
+  font-size: 1em;
+  color: #fff;
+  padding: 0 35px 0 5px;
 }
 
 #registerBox .icon {
-    position: absolute;
-    right:8px;
-    color:#fff;
-    font-size:1.2em;
-    line-height: 57px;
+  position: absolute;
+  right: 8px;
+  color: #fff;
+  font-size: 1.2em;
+  line-height: 57px;
 }
 
 #registerBox .remember-forgot {
-    margin:-15px 0 15px;
-    font-size: .9em;
-    color:#fff;
-    display:flex;
-    justify-content: space-between;
+  margin: -15px 0 15px;
+  font-size: .9em;
+  color: #fff;
+  display: flex;
+  justify-content: space-between;
 }
 
 #registerBox .remember-forgot label input {
-    margin-right: 3px;
+  margin-right: 3px;
 }
 
 #registerBox .remember-forgot a {
-    color: #fff;
-    text-decoration: none;
+  color: #fff;
+  text-decoration: none;
 }
 
 #registerBox .remember-forgot a:hover {
-    text-decoration: underline;
+  text-decoration: underline;
 }
 
 #registerBox button {
-    width:100% ;
-    height: 40px;
-    background-color: #ffff;
-    border:none;
-    outline:none;
-    border-radius: 40px;
-    cursor:pointer;
-    font-size:1em;
-    color:black;
-    font-weight: 500;
+  width: 100%;
+  height: 40px;
+  background-color: #fff;
+  border: none;
+  outline: none;
+  border-radius: 40px;
+  cursor: pointer;
+  font-size: 1em;
+  color: black;
+  font-weight: 500;
 }
 
 #registerBox .register-link {
-    font-size: .9em;
-    color:#fff;
-    text-align: center;
-    margin:25px 0 10px;
+  font-size: .9em;
+  color: #fff;
+  text-align: center;
+  margin: 25px 0 10px;
 }
 
 #registerBox .register-link p a {
-    color:white;
-    text-decoration: none;
-    font-weight:600;
+  color: white;
+  text-decoration: none;
+  font-weight: 600;
 }
 
 #registerBox .register-link p a:hover {
-    text-decoration: underline;
-
+  text-decoration: underline;
 }
 
+#passwordMessage {
+  position: absolute;
+  left: 0;
+  bottom: -40px; 
+  display: block;
+  font-size: 13px;
+  line-height: 1.2;
+  font-weight: 500;
+}
+
+#passwordMessage.valid   { color: #00ff7f; }
+#passwordMessage.invalid { color: #ff3b30; }
+
+#registerBox .input-box {
+  position: relative;
+  width: 310px;
+  margin: 30px 0;
+  border-bottom: 2px solid #fff;
+}
+
+#registerBox .input-box .icon{
+  position: absolute;
+  right: 36px;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 1.2em;
+  color: #fff;
+}
+#registerBox .input-box .toggle-eye{
+  position: absolute;
+  right: 8px;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 1.2em;
+  cursor: pointer;
+  color: #ccc;
+  transition: color .3s;
+}
+
+#registerBox .input-box .toggle-eye:hover {
+  color: #fff;
+}
+#passwordMessage{
+  position: absolute;
+  left: 0;
+  bottom: -22px;  
+  display: block;
+}
 
 
 .banner {
@@ -882,4 +932,57 @@ ul .link-item:not(:last-child) {
 
 .wrapper a:not(:last-child) {
     margin-right: 30px;
+}
+
+
+.trailer-modal {
+  display: none;
+  position: fixed;
+  z-index: 2000;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0,0,0,0.8);
+  backdrop-filter: blur(5px);
+  justify-content: center;
+  align-items: center;
+}
+
+.trailer-content {
+  position: relative;
+  width: 80%;
+  max-width: 900px;
+  background: transparent;
+  border-radius: 15px;
+  box-shadow: 0 0 25px rgba(255,255,255,0.3);
+  overflow: hidden;
+  animation: fadeIn 0.4s ease;
+}
+
+.trailer-content iframe {
+  width: 100%;
+  height: 500px;
+  border: none;
+  border-radius: 10px;
+}
+
+.close-trailer {
+  position: absolute;
+  top: 10px;
+  right: 20px;
+  color: white;
+  font-size: 30px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.close-trailer:hover {
+  color: #ff6961;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: scale(0.9); }
+  to { opacity: 1; transform: scale(1); }
 }

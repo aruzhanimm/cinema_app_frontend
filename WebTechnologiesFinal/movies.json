@@ -1,0 +1,30 @@
+[
+  {
+    "title": "Venom",
+    "genre": "Fantasy / Action",
+    "year": "2018",
+    "rating": "6.9",
+    "image": "./images/venom.JPG"
+  },
+  {
+    "title": "Interstellar",
+    "genre": "Fantasy / Drama",
+    "year": "2014",
+    "rating": "8.7",
+    "image": "./images/interstellar.JPG"
+  },
+  {
+    "title": "My Name",
+    "genre": "Action / Thriller",
+    "year": "2021",
+    "rating": "8.0",
+    "image": "./images/myname.JPG"
+  },
+  {
+    "title": "Unlocked",
+    "genre": "Thriller / Crime",
+    "year": "2023",
+    "rating": "7.2",
+    "image": "./images/unlocked.JPG"
+  }
+]
