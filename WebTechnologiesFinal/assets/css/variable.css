@@ -24,3 +24,100 @@
     --fw-5: 500;
     --px: 120px;
 }
+
+
+/* === Theme Toggle Button === */
+.theme-toggle-btn {
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-size: 24px;
+  color: var(--white);
+  margin-left: 15px;
+  transition: transform 0.3s ease;
+}
+
+.theme-toggle-btn {
+  margin-right: 15px; /* отступ справа */
+}
+
+
+.theme-toggle-btn:hover {
+  transform: rotate(20deg);
+}
+
+/* === Light Theme Variables === */
+body.light-mode {
+  --rich-black-fogra-30: hsl(0, 0%, 100%);
+  --rich-black-fogra-29: hsl(0, 0%, 100%);
+  --oxford-blue: hsl(0, 0%, 100%);
+  --oxford-blue-50: hsla(0, 0%, 100%, 0.8);
+  --off-white: hsl(0, 0%, 10%);
+  --white: hsl(0, 0%, 5%);
+  --live-indicator: hsl(0, 79%, 63%);
+  --light-azure: hsl(214, 84%, 56%);
+  background-color: var(--oxford-blue);
+  color: var(--off-white);
+}
+
+body.light-mode .navbar,
+body.light-mode .footer-content,
+body.light-mode .movies,
+body.light-mode .category,
+body.light-mode .live {
+  background-color: var(--rich-black-fogra-29);
+  color: var(--off-white);
+}
+
+body.light-mode .theme-toggle-btn {
+  color: var(--off-white);
+}
+
+/* Текст в светлой теме */
+body.light-mode .about-text,
+body.light-mode .about-text p,
+body.light-mode .about-text h3,
+body.light-mode .about-text ul,
+body.light-mode .about-text li {
+    color: #111111; /* тёмный текст на светлом фоне */
+}
+
+body.light-mode {
+    background-color: #fff;
+    color: #111;
+}
+
+body.light-mode p,
+body.light-mode h2,
+body.light-mode h3,
+body.light-mode h4,
+body.light-mode li,
+body.light-mode span {
+    color: #111;
+}
+
+body.light-mode .pricing-card {
+    background-color: #fff;
+    border: 1px solid #fff;
+}
+
+body.light-mode .feature-item,
+body.light-mode .feature-icon {
+    color: #111;
+}
+
+body.light-mode .faq-icon {
+    color: #111;
+}
+
+
+/* Отступ между логотипом и навигацией */
+.navbar-brand {
+    margin-right: 100px; /* расстояние между логотипом и меню */
+}
+
+/* Для самой навигации можно добавить немного gap */
+.navbar-nav {
+    display: flex;
+    gap: 10px; /* расстояние между пунктами меню */
+}

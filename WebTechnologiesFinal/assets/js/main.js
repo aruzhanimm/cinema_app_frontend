@@ -269,3 +269,28 @@ navbarFormCloseBtn.addEventListener('click', searchBarIsActive);
     });
 });
 
+const themeToggle = document.getElementById("themeToggle");
+const themeIcon = document.getElementById("themeIcon");
+const body = document.body;
+const brandName = document.getElementById("brandName").querySelector("span");
+
+// 🕶 Load previous theme if saved
+if (localStorage.getItem("theme") === "light") {
+  body.classList.add("light-mode");
+  themeIcon.setAttribute("name", "moon-outline");
+  brandName.style.color = "black";
+}
+
+themeToggle.addEventListener("click", () => {
+  body.classList.toggle("light-mode");
+
+  if (body.classList.contains("light-mode")) {
+    themeIcon.setAttribute("name", "moon-outline");
+    brandName.style.color = "black"; // light mode → dark text
+    localStorage.setItem("theme", "light");
+  } else {
+    themeIcon.setAttribute("name", "sunny-outline");
+    brandName.style.color = "white"; // dark mode → white text
+    localStorage.setItem("theme", "dark");
+  }
+});

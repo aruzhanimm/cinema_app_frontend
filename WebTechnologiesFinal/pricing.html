@@ -9,6 +9,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="./assets/css/pricing.css">
+    <link rel="stylesheet" href="./assets/css/variable.css">
     <title>MORIGINAL | Pricing Plans</title>
 </head>
 <body>
@@ -22,7 +23,7 @@
                     <span class="two"></span>
                     <span class="three"></span>
                 </button>
-                <a href="index.html" class="navbar-brand">
+                <a href="index.html" class="navbar-brand" id="brandName">
                     <span style="font-family: 'Montserrat', sans-serif; font-size: 24px; font-weight: bold;">MORIGINAL</span>
                 </a>
 
@@ -35,6 +36,7 @@
                     </ul>
                 </nav>
 
+
                 <div class="navbar-actions">
                     <form action="#" class="navbar-form">
                         <input type="text" name="search" placeholder="I'm looking for ..." class="navbar-form-search">
@@ -45,6 +47,11 @@
                             <ion-icon name="close-circle-outline"></ion-icon>
                         </button>
                     </form>
+
+                    <button id="themeToggle" class="theme-toggle-btn" aria-label="Switch theme">
+                        <ion-icon name="sunny-outline" id="themeIcon"></ion-icon>
+                    </button>
+
 
                     <button class="navbar-search-btn">
                         <ion-icon name="search-outline"></ion-icon>
@@ -273,6 +280,7 @@
     </div>
 
     <script src="./assets/js/main.js"></script>
+    <script src="./assets/js/lightDark.js"></script>
     <script src="./assets/js/pricing.js"></script>
     <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
     <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
