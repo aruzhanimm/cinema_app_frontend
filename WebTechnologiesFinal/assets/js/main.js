@@ -163,5 +163,109 @@ navbarFormCloseBtn.addEventListener('click', searchBarIsActive);
     }
   });
 
+  document.addEventListener("DOMContentLoaded", function () {
+  const searchForm = document.getElementById("searchForm");
+  const searchInput = document.getElementById("searchInput");
+  const movieCards = Array.from(document.querySelectorAll(".movie-card"));
+  const genreSelect = document.querySelector(".filter-dropdowns .genre");
+  const yearSelect = document.querySelector(".filter-dropdowns .year");
+  const radioButtons = document.querySelectorAll(".filter-radios input[type='radio']");
 
-  
+  // 🔍 Search
+  searchForm.addEventListener("submit", function (e) {
+    e.preventDefault();
+    applyFilters();
+  });
+
+  // 🔄 Filter on select change
+  genreSelect.addEventListener("change", applyFilters);
+  yearSelect.addEventListener("change", applyFilters);
+
+  // 🔘 Sort on radio change
+  radioButtons.forEach(radio => {
+    radio.addEventListener("change", applyFilters);
+  });
+
+  function applyFilters() {
+    const query = searchInput.value.toLowerCase().trim();
+    const selectedGenre = genreSelect.value.toLowerCase();
+    const selectedYear = yearSelect.value;
+    const selectedSort = document.querySelector(".filter-radios input[type='radio']:checked").id;
+
+    let filteredMovies = movieCards.filter(card => {
+      const title = card.querySelector(".card-title").textContent.toLowerCase();
+      const genre = card.querySelector(".genre").textContent.toLowerCase();
+      const year = card.querySelector(".year").textContent.trim();
+
+      const matchesSearch = !query || title.includes(query) || genre.includes(query);
+      const matchesGenre = selectedGenre === "all genres" || genre.includes(selectedGenre);
+      const matchesYear = checkYearRange(selectedYear, year);
+
+      return matchesSearch && matchesGenre && matchesYear;
+    });
+
+    // 🔄 Sort movies
+    if (selectedSort === "newest") {
+      filteredMovies.sort((a, b) => {
+        const yearA = parseInt(a.querySelector(".year").textContent);
+        const yearB = parseInt(b.querySelector(".year").textContent);
+        return yearB - yearA; // newest first
+      });
+    } else if (selectedSort === "popular") {
+      filteredMovies.sort((a, b) => {
+        const ratingA = parseFloat(a.querySelector(".rating span").textContent);
+        const ratingB = parseFloat(b.querySelector(".rating span").textContent);
+        return ratingB - ratingA; // highest rating first
+      });
+    } else if (selectedSort === "featured") {
+      // Custom rule — let's assume featured = rating > 8.5
+      filteredMovies.sort((a, b) => {
+        const ratingA = parseFloat(a.querySelector(".rating span").textContent);
+        const ratingB = parseFloat(b.querySelector(".rating span").textContent);
+        const isFeaturedA = ratingA >= 8.5 ? 1 : 0;
+        const isFeaturedB = ratingB >= 8.5 ? 1 : 0;
+        return isFeaturedB - isFeaturedA;
+      });
+    }
+
+    // 🧱 Clear and display filtered/sorted movies
+    const moviesGrid = document.querySelector(".movies-grid");
+    moviesGrid.innerHTML = "";
+    filteredMovies.forEach(card => moviesGrid.appendChild(card));
+  }
+
+  // 📆 Helper function to handle year ranges
+  function checkYearRange(selected, year) {
+    const y = parseInt(year);
+    if (selected === "all years") return true;
+    if (selected.includes("-")) {
+      const [start, end] = selected.split("-").map(Number);
+      return y >= start && y <= end;
+    }
+    return y === parseInt(selected);
+  }
+});
+
+
+  document.addEventListener("DOMContentLoaded", function() {
+    const searchForm = document.getElementById("searchForm");
+    const searchInput = document.getElementById("searchInput");
+    const movieCards = document.querySelectorAll(".movie-card");
+
+    searchForm.addEventListener("submit", function(e) {
+        e.preventDefault(); // Prevent page reload
+        const query = searchInput.value.toLowerCase().trim();
+
+        movieCards.forEach(card => {
+            const title = card.querySelector(".card-title").textContent.toLowerCase();
+            const genre = card.querySelector(".genre").textContent.toLowerCase();
+
+            if (title.includes(query) || genre.includes(query)) {
+                card.style.display = "block"; // show
+            } else {
+                card.style.display = "none"; // hide
+            }
+        });
+    });
+});
+

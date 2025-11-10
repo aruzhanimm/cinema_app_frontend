@@ -12,6 +12,14 @@
     --yellow:              hsl(45, 100%, 54%);
     --white:               hsl(0, 0%, 100%);
     --azure:               hsl(211, 100%, 58%);
+    --color-bg: #0d0d0d;
+    --color-bg-secondary: #121212;
+    --color-text: #ffffff;
+    --color-accent: #00b4d8;
+    --color-card: #1a1a1a;
+    --color-border: rgba(255,255,255,0.1);
+    --color-button-bg: #222;
+    --color-button-text: #fff;
 
     --ff-montserrat: "Montserrrat", sans-serif;
     --section-heading: 40px;
@@ -23,4 +31,15 @@
     --fw-6: 600;
     --fw-5: 500;
     --px: 120px;
+}
+
+body.light-mode {
+  --color-bg: #f8f9fa;
+  --color-bg-secondary: #ffffff;
+  --color-text: #111;
+  --color-accent: #0077b6;
+  --color-card: #ffffff;
+  --color-border: rgba(0,0,0,0.1);
+  --color-button-bg: #f0f0f0;
+  --color-button-text: #111;
 }
