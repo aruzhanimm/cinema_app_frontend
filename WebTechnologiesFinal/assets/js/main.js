@@ -123,45 +123,77 @@ navbarFormCloseBtn.addEventListener('click', searchBarIsActive);
   }
   
   const trailerModal = document.getElementById('trailerModal');
-  const trailerFrame = document.getElementById('trailerFrame');
-  const closeTrailer = document.querySelector('.close-trailer');
+const trailerFrame = document.getElementById('trailerFrame');
+const closeTrailer = document.querySelector('.close-trailer');
 
-  
-  document.querySelectorAll('.movie-card .play').forEach(playBtn => {
-    playBtn.addEventListener('click', () => {
-      const movieTitle = playBtn.closest('.movie-card').querySelector('.card-title').textContent.trim();
+document.querySelectorAll('.live-card .play').forEach(playBtn => {
+  playBtn.addEventListener('click', () => {
+    const movieTitle = playBtn
+      .closest('.live-card')
+      .querySelector('.card-title')
+      .textContent
+      .replace(/\s+/g, ' ') 
+      .trim()
+      .toLowerCase(); 
 
-      const trailers = {
-        "Mean Girls": "https://youtu.be/oDU84nmSDZY?si=TPeMCB9pHy8Ebss_",
-        "Wall to Wall": "https://www.youtube.com/embed/1SmlsfSqmOw",
-        "My name": "https://www.youtube.com/embed/tPd_dV7XhKQ",
-        "Interstellar": "https://www.youtube-nocookie.com/embed/zSWdZVtXT7E",
-        "Venom": "https://www.youtube.com/embed/u9Mv98Gr5pY",
-        "Unlocked": "https://www.youtube.com/embed/kEcmD0bp0ZI",
-        "1+1": "https://www.youtube.com/embed/34WIbmXkewU",
-        "Central Intelligence": "https://www.youtube.com/embed/MxEw3elSJ8M",
-        "Romeo + Juliet": "https://www.youtube.com/embed/S0qao2xINsE",
-        "Karate Kid: Legends": "https://www.youtube.com/embed/T6DJcgm3wNY",
-        "MegaMind": "https://www.youtube.com/embed/NJz7_Cy12W4"
-      };
-
-      const trailerURL = trailers[movieTitle] || "https://www.youtube.com/embed/dQw4w9WgXcQ"; 
-      trailerFrame.src = trailerURL;
-      trailerModal.style.display = 'flex';
-    });
+    const trailers = {
+      "alice in borderland season 3": "https://www.youtube-nocookie.com/embed/_8p6YkEPVco?autoplay=1",
+      "squid game season 3": "https://www.youtube-nocookie.com/embed/oqxAJKy0ii4",
+      "stranger things season 5": "https://www.youtube-nocookie.com/embed/b9EkMc79ZSU?autoplay=1",
+      "wednesday season 2": "https://www.youtube-nocookie.com/embed/03u4xyj0TH4?autoplay=1"
+    };
+    const trailerURL =
+      trailers[movieTitle] ||
+      "https://www.youtube-nocookie.com/embed/zSWdZVtXT7E?autoplay=1";
+    trailerFrame.src = trailerURL;
+    trailerModal.style.display = 'flex';
   });
-
-  closeTrailer.addEventListener('click', () => {
+});
+closeTrailer.addEventListener('click', () => {
+  trailerModal.style.display = 'none';
+  trailerFrame.src = '';
+});
+window.addEventListener('click', (e) => {
+  if (e.target === trailerModal) {
     trailerModal.style.display = 'none';
-    trailerFrame.src = ''; 
+    trailerFrame.src = '';
+  }
+});
+
+document.addEventListener("DOMContentLoaded", () => {
+  // 🌐 Переключатель языкового меню
+  const langToggle = document.getElementById("languageToggle");
+  const langMenu = document.querySelector(".language-menu");
+
+  if (!langToggle || !langMenu) {
+    console.warn("Language menu elements not found!");
+    return;
+  }
+
+  // Открыть / закрыть меню при клике на кнопку 
+  langToggle.addEventListener("click", (e) => {
+    e.stopPropagation();
+    langMenu.classList.toggle("active");
   });
 
-  window.addEventListener('click', (e) => {
-    if (e.target === trailerModal) {
-      trailerModal.style.display = 'none';
-      trailerFrame.src = '';
+  // Закрыть меню при клике вне его
+  window.addEventListener("click", (e) => {
+    if (!langMenu.contains(e.target) && e.target !== langToggle) {
+      langMenu.classList.remove("active");
     }
   });
+
+  // Выбор языка
+  document.querySelectorAll(".language-btn").forEach((btn) => {
+    btn.addEventListener("click", (e) => {
+      const lang = e.target.dataset.lang;
+      console.log(`🌐 Language switched to: ${lang}`);
+      langMenu.classList.remove("active");
+    });
+  });
+});
+
+
 
   document.addEventListener("DOMContentLoaded", function () {
   const searchForm = document.getElementById("searchForm");

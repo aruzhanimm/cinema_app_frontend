@@ -68,20 +68,35 @@ nav {
 
 
 .indicator {
-    position: relative;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  position: relative;
 }
 
+.live-dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background-color: var(--live-indicator, red);
+  box-shadow: 0 0 0 2px var(--live-indicator-shadow, rgba(255, 0, 0, 0.3));
+  animation: pulse 1.4s infinite ease-in-out;
+}
 
-.indicator::after {
-    content: '';
-    background: var(--live-indicator);
-    position: absolute;
-    top: calc(50% - 1px);
-    right: -15px;
-    width: 4px;
-    height: 4px;
-    box-shadow: 0 0 0 2px var(--live-indicator-shadow);
-    border-radius: 5px;
+/* Эффект пульсации (можно убрать, если не нужен) */
+@keyframes pulse {
+  0% {
+    transform: scale(1);
+    opacity: 1;
+  }
+  50% {
+    transform: scale(1.4);
+    opacity: 0.6;
+  }
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
 }
 
 
@@ -154,6 +169,81 @@ nav {
 .navbar-signin:hover span {
     color: var(--light-azure);
 }
+
+/* 🌐 Language dropdown styling */
+.language-dropdown {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.language-toggle-btn {
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  color: #fff;
+  font-size: 22px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: color 0.3s ease;
+}
+
+.language-toggle-btn:hover {
+  color: var(--light-azure);
+}
+
+.language-menu {
+  position: absolute;
+  top: 36px; /* расстояние между иконкой и меню */
+  right: 0;
+  background: var(--oxford-blue);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 10px;
+  padding: 8px 6px;
+  display: none;
+  flex-direction: column;
+  gap: 6px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.4);
+  min-width: 80px;
+  z-index: 100;
+  transition: all 0.3s ease;
+}
+
+.language-menu.active {
+  display: flex;
+  animation: dropdownFade 0.25s ease;
+}
+
+@keyframes dropdownFade {
+  from {
+    opacity: 0;
+    transform: translateY(-5px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.language-menu .language-btn {
+  background: transparent;
+  border: none;
+  color: #fff;
+  font-size: 13px;
+  text-align: left;
+  padding: 4px 8px;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: all 0.25s ease;
+}
+
+.language-menu .language-btn:hover {
+  background: rgba(255, 255, 255, 0.1);
+  color: var(--light-azure);
+}
+
 
 /*-- LOG-IN--*/
 #registerBox .close {
