@@ -10,7 +10,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
     <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.9.4/dist/confetti.browser.min.js"></script>
-    <title>MORIGINAL | Movie website</title>
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
 </head>
 <body>
 
@@ -86,27 +86,35 @@
 
                             <div class="input-box">
                                 <span class="icon"><ion-icon name="mail-open-outline"></ion-icon></span>
-                                    <input type="email" id="email" required>
+                                    <input type="email" id="email" required
+                                           aria-describedby="email-error"
+                                           aria-invalid="false"
+                                           aria-required="true">
                                     <label data-i18n="email">Email</label>
+                                <span id="email-error" class="error-message" aria-live="polite"></span>
                             </div>
 
                             <div class="input-box">
                                 <span class="icon"><ion-icon name="lock-closed-outline"></ion-icon></span>
-                                    <input type="password" id="password" required placeholder="">
+                                    <input type="password" id="password" required
+                                           aria-describedby="password-error password-message"
+                                           aria-invalid="false"
+                                           aria-required="true">
                                     <ion-icon id="togglePassword" name="eye-outline" class="toggle-eye"></ion-icon>
                                     <label data-i18n="password">Password</label>
                                     <p id="passwordMessage"></p>
+                                <span id="password-error" class="error-message" aria-live="polite"></span>
                             </div>
 
                             <div class="remember-forgot">
                                 <label><input type="checkbox"><span data-i18n="remember_me">Remember me</span></label>
                                 <a href="#" data-i18n="forgot_password">Forgot Password?</a>
                             </div>
-                            
+
                             <div class="button-wrapper">
                                 <button class="confetti-button" data-i18n="login_button">Login</button>
                             </div>
-                            
+
                             <div class="register-link">
                                 <p><span data-i18n="no_account">Don't have an account?</span>
                                     <a href="#" data-i18n="register">Register</a>
@@ -878,11 +886,16 @@
         <iframe id="trailerFrame" width="800" height="450" frameborder="0" allowfullscreen></iframe>
     </div>
     </div>
+    <button id="backToTop" class="back-to-top" aria-label="Back to top" style="display: none;">
+    <ion-icon name="chevron-up-outline"></ion-icon>
+    </button>
 
     <script src="assets/js/main.js"></script>
     <script src="assets/js/language.js"></script>
     <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
     <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="./assets/js/back-to-top.js"></script>
+
 </body>
 </html>

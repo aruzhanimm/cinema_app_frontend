@@ -1,0 +1,9 @@
+.error-message {
+    color: var(--live-indicator);
+    font-size: var(--fs-x-sm);
+    margin-top: 5px;
+}
+
+input:invalid {
+    border-color: var(--live-indicator);
+}
