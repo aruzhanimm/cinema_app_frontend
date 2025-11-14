@@ -1116,6 +1116,14 @@ ul .link-item:not(:last-child) {
 .language-menu {
     z-index: 9999 !important;
 }
+.navbar-actions,
+.language-dropdown,
+.language-toggle-btn,
+.navbar-signin {
+    position: relative;
+    z-index: 9999 !important;
+}
+
 
 
 @keyframes fadeIn {
