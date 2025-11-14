@@ -64,49 +64,27 @@
      transform: translateY(-6px);
 }
 .language-dropdown {
-  position: relative;
-  display: flex;
-  align-items: center;
-  justify-content: center;
+    position: relative;
+    z-index: 5000 !important;
+    pointer-events: auto !important;
 }
 
 .language-toggle-btn {
-  background: transparent;
-  border: none;
-  cursor: pointer;
-  color: #fff;
-  font-size: 22px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  transition: color 0.3s ease;
-}
-
-.language-toggle-btn:hover {
-  color: var(--light-azure);
+    position: relative;
+    z-index: 6000 !important;
 }
 
 .language-menu {
-  position: absolute;
-  top: 36px; /* расстояние между иконкой и меню */
-  right: 0;
-  background: var(--oxford-blue);
-  border: 1px solid rgba(255, 255, 255, 0.2);
-  border-radius: 10px;
-  padding: 8px 6px;
-  display: none;
-  flex-direction: column;
-  gap: 6px;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.4);
-  min-width: 80px;
-  z-index: 100;
-  transition: all 0.3s ease;
+    position: absolute;
+    z-index: 7000 !important;
 }
 
-.language-menu.active {
-  display: flex;
-  animation: dropdownFade 0.25s ease;
+.navbar-signin {
+    position: relative;
+    z-index: 1;
 }
+
+
 
 @keyframes dropdownFade {
   from {
@@ -171,6 +149,19 @@
     font-size: 32px;
     color:#00aaff;
 }
+
+.language-dropdown {
+    position: relative;
+    z-index: 2000;
+}
+.language-toggle-btn {
+    position: relative;
+    z-index: 2001;
+}
+.language-menu {
+    z-index: 3000;
+}
+
 
 @keyframes breathe {
   0%, 100% {

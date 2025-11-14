@@ -4,59 +4,75 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title data-i18n="about_title">About Moriginal</title>
+
     <link rel="stylesheet" href="assets/css/about.css">
     <link rel="stylesheet" href="assets/css/main.css">
     <link rel="stylesheet" href="assets/css/media.css">
     <link rel="stylesheet" href="assets/css/variable.css">
+
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-
-</button>
 </head>
+
 <body>
-<div class="container">
+    <div class="container">
+        <header>
+            <div class="navbar">
 
-    <header>
-        <div class="navbar">
-            <button class="navbar-menu-btn">
-                <span></span>
-                <span></span>
-                <span></span>
-            </button>
-
-            <!-- Логотип -->
-            <a href="index.html" class="navbar-brand" id="brandName">
-                <span style="font-family: 'Montserrat', sans-serif; font-size: 24px; font-weight: bold; color:white;">MORIGINAL</span>
-            </a>
-
-            <!-- Навигация -->
-            <nav class="navbar-nav-wrapper">
-                <ul class="navbar-nav">
-                    <li><a href="index.html" class="navbar-link" data-i18n="nav_home">Home</a></li>
-                    <li><a href="about.html" class="navbar-link" data-i18n="nav_about">About Us</a></li>
-                    <li><a href="contacts.html" class="navbar-link" data-i18n="nav_contacts">Contacts</a></li>
-                    <li><a href="pricing.html" class="navbar-link" data-i18n="nav_pricing">Pricing</a></li>
-                </ul>
-            </nav>
-
-            <!-- Действия -->
-            <div class="navbar-actions">
-                <form action="#" class="navbar-form">
-                    <input type="text" placeholder="I'm looking for ..." class="navbar-form-search" data-i18n-placeholder="search_placeholder">
-                    <button class="navbar-form-btn"><ion-icon name="search-outline"></ion-icon></button>
-                    <button class="navbar-form-close"><ion-icon name="close-circle-outline"></ion-icon></button>
-                </form>
-
-                <button id="themeToggle" class="theme-toggle-btn" aria-label="Switch theme">
-                    <ion-icon name="sunny-outline" id="themeIcon"></ion-icon>
+                <button class="navbar-menu-btn">
+                    <span class="one"></span>
+                    <span class="two"></span>
+                    <span class="three"></span>
                 </button>
 
-                <div class="search-box">
+                <a href="index.html" class="navbar-brand" id="brandName">
+                    <span style="font-family: 'Montserrat', sans-serif; font-size: 24px; font-weight: bold; color:white;">
+                        MORIGINAL
+                    </span>
+                </a>
 
-                     <div class="language-dropdown">
-                        <button id="languageToggle" class="language-toggle-btn" aria-label="Change language">
+                <nav>
+                    <ul class="navbar-nav">
+                        <li><a href="index.html" class="navbar-link" data-i18n="nav_home">Home</a></li>
+                        <li><a href="about.html" class="navbar-link" data-i18n="nav_about">About Us</a></li>
+                        <li><a href="contacts.html" class="navbar-link" data-i18n="nav_contacts">Contacts</a></li>
+                        <li><a href="pricing.html" class="navbar-link" data-i18n="nav_pricing">Pricing</a></li>
+                    </ul>
+                </nav>
+
+                <div class="navbar-actions">
+
+                    <!-- Search -->
+                    <form class="navbar-form">
+                        <input type="text"
+                            class="navbar-form-search"
+                            id="searchInput"
+                            data-i18n="search_placeholder"
+                            placeholder="I'm looking for ..." />
+
+                        <button type="submit" class="navbar-form-btn">
+                            <ion-icon name="search-outline"></ion-icon>
+                        </button>
+
+                        <button type="button" class="navbar-form-close">
+                            <ion-icon name="close-circle-outline"></ion-icon>
+                        </button>
+                    </form>
+
+                    <button class="navbar-search-btn">
+                        <ion-icon name="search-outline"></ion-icon>
+                    </button>
+
+                    <!-- Theme -->
+                    <button id="themeToggle" class="theme-toggle-btn">
+                        <ion-icon id="themeIcon" name="sunny-outline"></ion-icon>
+                    </button>
+
+                    <!-- Language -->
+                    <div class="language-dropdown">
+                        <button id="languageToggle" class="language-toggle-btn">
                             <ion-icon name="globe-outline"></ion-icon>
                         </button>
-                        
+
                         <div class="language-menu">
                             <button class="language-btn" data-lang="en">EN</button>
                             <button class="language-btn" data-lang="ru">RU</button>
@@ -64,24 +80,66 @@
                         </div>
                     </div>
 
-                <a href="#" class="navbar-signin">
-                    <span data-i18n="sign_in">Sign in</span>
-                    <ion-icon name="log-in-outline"></ion-icon>
-                </a>
+                    <!-- Login -->
+                    <a href="#" class="navbar-signin" id="openLogin">
+                        <span data-i18n="sign_in">Sign in</span>
+                        <ion-icon name="log-in-outline"></ion-icon>
+                    </a>
+
+                    <!-- Login Popup -->
+                    <div id="registerBox" class="register-box">
+                        <form id="loginForm">
+                            <span class="close">&times;</span>
+                            <h2 data-i18n="login_title">Login</h2>
+
+                            <div class="input-box">
+                                <span class="icon"><ion-icon name="mail-open-outline"></ion-icon></span>
+                                <input type="email" required>
+                                <label data-i18n="email">Email</label>
+                            </div>
+
+                            <div class="input-box">
+                                <span class="icon"><ion-icon name="lock-closed-outline"></ion-icon></span>
+                                <input type="password" required>
+                                <label data-i18n="password">Password</label>
+                                <ion-icon id="togglePassword" name="eye-outline" class="toggle-eye"></ion-icon>
+                            </div>
+
+                            <div class="remember-forgot">
+                                <label>
+                                    <input type="checkbox">
+                                    <span data-i18n="remember_me">Remember me</span>
+                                </label>
+                                <a href="#" data-i18n="forgot_password">Forgot Password?</a>
+                            </div>
+
+                            <div class="button-wrapper">
+                                <button class="confetti-button" data-i18n="login_button">Login</button>
+                            </div>
+
+                            <div class="register-link">
+                                <p>
+                                    <span data-i18n="no_account">Don't have an account?</span>
+                                    <a href="#" data-i18n="register">Register</a>
+                                </p>
+                            </div>
+                        </form>
+                    </div>
+
+                </div>
             </div>
-        </div>
-    </header>
+        </header>
+
+
 
     <main class="about-section">
-        <h2 class="section-heading" data-i18n="about_heading">About Us</h2>
+
+        <h2 class="section-heading" data-i18n="nav_about">About Us</h2>
 
         <div class="about-block">
             <div class="about-text">
                 <p data-i18n="about_intro">
                     Moriginal is a movie streaming website that brings together all your favourite films in one place.
-                    Our mission is to provide users with a modern, fast, and user-friendly experience for watching high-quality movies online.
-                    We constantly improve our interface, expand our catalog, and update the platform to provide users with the best viewing experience.
-                    With innovative technology and a dedicated team, Moriginal continues to grow and set new standards in online entertainment.
                 </p>
             </div>
             <div class="about-image">
@@ -95,21 +153,24 @@
                 <div class="about-statictics">
                     <div class="statistic-items">
                         <ion-icon name="people-outline"></ion-icon>
-                        <h3>40+ million</h3>
+                        <h3 data-i18n="stats_users_number">40+ million</h3>
                         <p><strong data-i18n="about_users">unique users per month</strong></p>
                     </div>
+
                     <div class="statistic-items">
                         <ion-icon name="time-outline"></ion-icon>
-                        <h3>2.6 billion hours</h3>
+                        <h3 data-i18n="stats_viewing_number">2.6 billion hours</h3>
                         <p><strong data-i18n="about_viewing">total viewing per year</strong></p>
                     </div>
+
                     <div class="statistic-items">
                         <ion-icon name="cash-outline"></ion-icon>
-                        <h3>3 monetization models</h3>
+                        <h3 data-i18n="stats_monetization_number">3 monetization models</h3>
                         <p><strong data-i18n="about_monetization">SVOD / AVOD / EST</strong></p>
                     </div>
                 </div>
             </div>
+
             <div class="about-image">
                 <img src="images/statistics.JPG" alt="Statistics">
             </div>
@@ -120,10 +181,11 @@
                 <h3 data-i18n="about_technologies">Technologies</h3>
                 <ul>
                     <li data-i18n="about_tech1">The service is available on any platform and is updated weekly.</li>
-                    <li data-i18n="about_tech2">The #1 app in Kazakhstan on Smart TVs from LG, Samsung, Sony, Philips, and Toshiba.</li>
-                    <li data-i18n="about_tech3">Our own data and supply management platform, analytics and statistics system.</li>
+                    <li data-i18n="about_tech2">#1 app in Kazakhstan on Smart TVs from LG, Samsung, Sony, Philips and Toshiba.</li>
+                    <li data-i18n="about_tech3">Own analytics and data platform.</li>
                 </ul>
             </div>
+
             <div class="about-image">
                 <img src="images/technologies.JPG" alt="Technologies">
             </div>
@@ -134,9 +196,6 @@
                 <h3 data-i18n="about_team">Team and Career</h3>
                 <p data-i18n="about_team_text">
                     Moriginal is more than just a movie platform — it’s a place where creativity and technology come together.
-                    Our team includes developers, designers, marketers, and content creators who are passionate about innovation and quality.
-                    Every member contributes to improving user experience, expanding the platform’s functionality, and building a strong digital entertainment brand.
-                    We believe in growth, teamwork, and continuous learning, and we’re always looking for talented people ready to join us on this exciting journey.
                 </p>
             </div>
             <div class="about-image">
@@ -147,14 +206,8 @@
         <div class="read-more-section">
             <button class="read-more" data-i18n="read_more">READ MORE</button>
             <div class="hidden-text">
-                <p data-i18n="about_extra1">
-                    At Moriginal, we believe that entertainment connects people and creates shared experiences that bring joy, inspiration, and reflection.
-                    Our goal is to inspire, engage, and bring stories to every screen — whether it’s a blockbuster movie, an independent film, or an inspiring documentary.
-                </p>
-                <p data-i18n="about_extra2">
-                    We are constantly improving our technology and expanding our collection to meet the diverse tastes of our global audience.
-                    From cutting-edge streaming quality to personalized recommendations, we strive to make Moriginal not just a platform, but a destination for all movie lovers.
-                </p>
+                <p data-i18n="about_extra1">More information...</p>
+                <p data-i18n="about_extra2">More details...</p>
                 <p data-i18n="about_extra3">Stay tuned — we’re just getting started!</p>
             </div>
         </div>
@@ -163,61 +216,60 @@
     <footer>
         <div class="footer-content">
             <div class="footer-brand">
-                <span class="footer-logo" style="font-family: 'Montserrat', sans-serif; font-size: 32px; font-weight: bold;">MORIGINAL</span>
-                <p class="slogan" data-i18n="footer_about">Movies & TV Shows, Online cinema, Movie database HTML Template.</p>
-                <div class="social-link">
-                    <a href="#"><ion-icon name="logo-facebook"></ion-icon></a>
-                    <a href="#"><ion-icon name="logo-twitter"></ion-icon></a>
-                    <a href="#"><ion-icon name="logo-instagram"></ion-icon></a>
-                    <a href="#"><ion-icon name="logo-tiktok"></ion-icon></a>
-                    <a href="#"><ion-icon name="logo-youtube"></ion-icon></a>
-                </div>
+                    <span class="footer-logo" 
+                        style="font-family: 'Montserrat', sans-serif; font-size: 32px; font-weight: bold;">
+                        MORIGINAL
+                    </span>
+
+                    <p class="slogan" data-i18n="footer_slogan">
+                        Movies & TV Shows, Online cinema, Movie database HTML Template.
+                    </p>
+
+                    <div class="social-link">
+                        <a href="#"><ion-icon name="logo-facebook"></ion-icon></a>
+                        <a href="#"><ion-icon name="logo-twitter"></ion-icon></a>
+                        <a href="#"><ion-icon name="logo-instagram"></ion-icon></a>
+                        <a href="#"><ion-icon name="logo-tiktok"></ion-icon></a>
+                        <a href="#"><ion-icon name="logo-youtube"></ion-icon></a>
+                    </div>
             </div>
 
             <div class="footer-links">
                 <ul>
-                    <h4 class="link-heading" data-i18n="footer_moriginal">Moriginal</h4>
-                    <li class="link-item"><a href="index.html" data-i18n="nav_home">Home</a></li>
-                    <li class="link-item"><a href="pricing.html" data-i18n="footer_pricing">Pricing plans</a></li>
-                    <li class="link-item"><a href="contacts.html" data-i18n="footer_contacts">Contacts</a></li>
+                    <h4 data-i18n="footer_moriginal">Moriginal</h4>
+                    <li><a href="index.html" data-i18n="nav_home">Home</a></li>
+                    <li><a href="pricing.html" data-i18n="footer_pricing">Pricing</a></li>
+                    <li><a href="contacts.html" data-i18n="footer_contacts">Contacts</a></li>
                 </ul>
 
                 <ul>
-                    <h4 class="link-heading" data-i18n="footer_help">Help</h4>
-                    <li class="link-item"><a href="#" data-i18n="footer_account">Account & Billing</a></li>
-                    <li class="link-item"><a href="#" data-i18n="footer_devices">Supported Devices</a></li>
-                    <li class="link-item"><a href="#" data-i18n="footer_accessibility">Accessibility</a></li>
+                    <h4 data-i18n="footer_help">Help</h4>
+                    <li><a href="#" data-i18n="footer_account">Account & Billing</a></li>
+                    <li><a href="#" data-i18n="footer_devices">Supported Devices</a></li>
+                    <li><a href="#" data-i18n="footer_accessibility">Accessibility</a></li>
                 </ul>
             </div>
         </div>
 
         <div class="footer-copyright">
-            <div class="copyright">
-                <p data-i18n="footer_copyright">&copy; copyright 2025 Moriginal</p>
-            </div>
-            <div class="wrapper">
-                <a href="privacy.html" data-i18n="footer_privacy">Privacy policy</a>
-            </div>
+            <p data-i18n="footer_copyright">© copyright 2025 Moriginal</p>
+            <a href="privacy.html" data-i18n="footer_privacy">Privacy policy</a>
         </div>
     </footer>
 </div>
-<button id="backToTop" class="back-to-top" aria-label="Back to top" style="display: none;">
+
+<button id="backToTop" class="back-to-top" aria-label="Back to top">
     <ion-icon name="chevron-up-outline"></ion-icon>
 </button>
 
 <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
 <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
-<script src="./assets/js/lightDark.js"></script>
-<script src="./assets/js/language.js"></script>
-<script src="./assets/js/main.js"></script>
-<script>
-    $(document).ready(function(){
-        $(".read-more").click(function(){
-            $(".hidden-text").slideToggle(600);
-        });
-    });
-</script>
-<script src="./assets/js/back-to-top.js"></script>
+
+<script src="assets/js/lightDark.js"></script>
+<script src="assets/js/about.js"></script>
+<script src="assets/js/language.js"></script>
+<script src="assets/js/main.js"></script>
+<script src="assets/js/back-to-top.js"></script>
 
 </body>
 </html>

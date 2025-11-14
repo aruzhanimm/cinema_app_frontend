@@ -5,288 +5,304 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="./assets/css/main.css">
     <link rel="stylesheet" href="./assets/css/media.css">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="./assets/css/pricing.css">
     <link rel="stylesheet" href="./assets/css/variable.css">
-    <title>MORIGINAL | Pricing Plans</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@100..900&display=swap" rel="stylesheet">
+    <title>MORIGINAL | Pricing</title>
 </head>
+
 <body>
+<div class="container">
 
-    <div class="container">
+    <!-- HEADER -->
+    <header>
+        <div class="navbar">
 
-        <header>
-            <div class="navbar">
-                <button class="navbar-menu-btn active">
-                    <span class="one"></span>
-                    <span class="two"></span>
-                    <span class="three"></span>
-                </button>
-                <a href="index.html" class="navbar-brand" id="brandName">
-                    <span style="font-family: 'Montserrat', sans-serif; font-size: 24px; font-weight: bold;">MORIGINAL</span>
-                </a>
+            <button class="navbar-menu-btn active">
+                <span class="one"></span><span class="two"></span><span class="three"></span>
+            </button>
 
-                <nav class="">
-                    <ul class="navbar-nav">
-                        <li><a href="index.html" class="navbar-link">Home</a></li>
-                        <li><a href="about.html" class="navbar-link">About Us</a></li>
-                        <li><a href="contacts.html" class="navbar-link">Contacts</a></li>
-                        <li><a href="pricing.html" class="navbar-link">Pricing</a></li>
-                    </ul>
-                </nav>
+            <a href="index.html" class="navbar-brand" id="brandName">
+                <span>MORIGINAL</span>
+            </a>
 
+            <nav>
+                <ul class="navbar-nav">
+                    <li><a href="index.html" class="navbar-link" data-i18n="nav_home">Home</a></li>
+                    <li><a href="about.html" class="navbar-link" data-i18n="nav_about">About Us</a></li>
+                    <li><a href="contacts.html" class="navbar-link" data-i18n="nav_contacts">Contacts</a></li>
+                    <li><a href="pricing.html" class="navbar-link" data-i18n="nav_pricing">Pricing</a></li>
+                </ul>
+            </nav>
 
-                <div class="navbar-actions">
-                    <form action="#" class="navbar-form">
-                        <input type="text" name="search" placeholder="I'm looking for ..." class="navbar-form-search">
-                        <button class="navbar-form-btn">
-                            <ion-icon name="search-outline"></ion-icon>
-                        </button>
-                        <button class="navbar-form-close">
-                            <ion-icon name="close-circle-outline"></ion-icon>
-                        </button>
-                    </form>
+            <div class="navbar-actions">
 
-                    <button id="themeToggle" class="theme-toggle-btn" aria-label="Switch theme">
-                        <ion-icon name="sunny-outline" id="themeIcon"></ion-icon>
-                    </button>
+                <form class="navbar-form">
+                    <input type="text"
+                           class="navbar-form-search"
+                           data-i18n-placeholder="search_placeholder"
+                           placeholder="I'm looking for ..." />
 
-
-                    <button class="navbar-search-btn">
+                    <button type="submit" class="navbar-form-btn">
                         <ion-icon name="search-outline"></ion-icon>
                     </button>
 
-                    <a href="#" class="navbar-signin">
-                        <span>Sign in</span>
-                        <ion-icon name="log-in-outline"></ion-icon>
-                    </a>
+                    <button type="button" class="navbar-form-close">
+                        <ion-icon name="close-circle-outline"></ion-icon>
+                    </button>
+                </form>
+
+                <button class="navbar-search-btn">
+                    <ion-icon name="search-outline"></ion-icon>
+                </button>
+
+                <button id="themeToggle" class="theme-toggle-btn">
+                    <ion-icon id="themeIcon" name="sunny-outline"></ion-icon>
+                </button>
+
+                <!-- LANGUAGE -->
+                <div class="language-dropdown">
+                    <button id="languageToggle" class="language-toggle-btn">
+                        <ion-icon name="globe-outline"></ion-icon>
+                    </button>
+
+                    <div class="language-menu">
+                        <button class="language-btn" data-lang="en">EN</button>
+                        <button class="language-btn" data-lang="ru">RU</button>
+                        <button class="language-btn" data-lang="kz">KZ</button>
+                    </div>
                 </div>
+
+                <a href="#" class="navbar-signin">
+                    <span data-i18n="sign_in">Sign in</span>
+                    <ion-icon name="log-in-outline"></ion-icon>
+                </a>
+
             </div>
-        </header>
+        </div>
+    </header>
 
-        <main>
-            <section class="pricing-section">
-                <h2 class="section-heading">Choose Your Plan</h2>
-                <p class="pricing-subtitle">Select the perfect plan for your entertainment needs</p>
+    <!-- MAIN -->
+    <main>
+        <section class="pricing-section">
 
-                <div class="pricing-container">
-                    <!-- Basic Plan -->
-                    <div class="pricing-card">
-                        <div class="plan-header">
-                            <h3 class="plan-name">Basic</h3>
-                            <div class="plan-price">
-                                <span class="currency">$</span>
-                                <span class="amount">4.99</span>
-                                <span class="period">/month</span>
-                            </div>
-                            <p class="plan-description">Perfect for casual viewers</p>
+            <h2 class="section-heading" data-i18n="pricing_title">Choose Your Plan</h2>
+            <p class="pricing-subtitle" data-i18n="pricing_subtitle">Select the perfect plan for your entertainment needs</p>
+
+            <div class="pricing-container">
+
+                <!-- BASIC -->
+                <div class="pricing-card">
+                    <div class="plan-header">
+                        <h3 class="plan-name" data-i18n="pricing_basic">Basic</h3>
+                        <div class="plan-price">
+                            <span class="currency">$</span>
+                            <span class="amount">4.99</span>
+                            <span class="period" data-i18n="pricing_month">/month</span>
                         </div>
-
-                        <ul class="plan-features">
-                            <li class="feature-item">
-                                <ion-icon name="checkmark-circle" class="feature-icon"></ion-icon>
-                                <span>HD Quality (720p)</span>
-                            </li>
-                            <li class="feature-item">
-                                <ion-icon name="checkmark-circle" class="feature-icon"></ion-icon>
-                                <span>1 Screen at a time</span>
-                            </li>
-                            <li class="feature-item">
-                                <ion-icon name="checkmark-circle" class="feature-icon"></ion-icon>
-                                <span>Limited Movie Library</span>
-                            </li>
-                            <li class="feature-item disabled">
-                                <ion-icon name="close-circle" class="feature-icon"></ion-icon>
-                                <span>No Live TV</span>
-                            </li>
-                            <li class="feature-item disabled">
-                                <ion-icon name="close-circle" class="feature-icon"></ion-icon>
-                                <span>With Ads</span>
-                            </li>
-                        </ul>
-
-                        <button class="plan-btn basic-btn">Get Started</button>
+                        <p class="plan-description" data-i18n="pricing_basic_desc">Perfect for casual viewers</p>
                     </div>
 
-                    <!-- Standard Plan - Featured -->
-                    <div class="pricing-card featured">
-                        <div class="popular-badge">MOST POPULAR</div>
-                        <div class="plan-header">
-                            <h3 class="plan-name">Standard</h3>
-                            <div class="plan-price">
-                                <span class="currency">$</span>
-                                <span class="amount">9.99</span>
-                                <span class="period">/month</span>
-                            </div>
-                            <p class="plan-description">Best value for families</p>
-                        </div>
-
-                        <ul class="plan-features">
-                            <li class="feature-item">
-                                <ion-icon name="checkmark-circle" class="feature-icon"></ion-icon>
-                                <span>Full HD Quality (1080p)</span>
-                            </li>
-                            <li class="feature-item">
-                                <ion-icon name="checkmark-circle" class="feature-icon"></ion-icon>
-                                <span>2 Screens simultaneously</span>
-                            </li>
-                            <li class="feature-item">
-                                <ion-icon name="checkmark-circle" class="feature-icon"></ion-icon>
-                                <span>Full Movie Library</span>
-                            </li>
-                            <li class="feature-item">
-                                <ion-icon name="checkmark-circle" class="feature-icon"></ion-icon>
-                                <span>Live TV Access</span>
-                            </li>
-                            <li class="feature-item disabled">
-                                <ion-icon name="close-circle" class="feature-icon"></ion-icon>
-                                <span>Limited Ads</span>
-                            </li>
-                        </ul>
-
-                        <button class="plan-btn standard-btn">Get Started</button>
-                    </div>
-
-
-                    <div class="pricing-card">
-                        <div class="plan-header">
-                            <h3 class="plan-name">Premium</h3>
-                            <div class="plan-price">
-                                <span class="currency">$</span>
-                                <span class="amount">14.99</span>
-                                <span class="period">/month</span>
-                            </div>
-                            <p class="plan-description">Ultimate experience</p>
-                        </div>
-
-                        <ul class="plan-features">
-                            <li class="feature-item">
-                                <ion-icon name="checkmark-circle" class="feature-icon"></ion-icon>
-                                <span>4K Ultra HD Quality</span>
-                            </li>
-                            <li class="feature-item">
-                                <ion-icon name="checkmark-circle" class="feature-icon"></ion-icon>
-                                <span>4 Screens simultaneously</span>
-                            </li>
-                            <li class="feature-item">
-                                <ion-icon name="checkmark-circle" class="feature-icon"></ion-icon>
-                                <span>Full Movie Library + Premium</span>
-                            </li>
-                            <li class="feature-item">
-                                <ion-icon name="checkmark-circle" class="feature-icon"></ion-icon>
-                                <span>Live TV + Sports</span>
-                            </li>
-                            <li class="feature-item">
-                                <ion-icon name="checkmark-circle" class="feature-icon"></ion-icon>
-                                <span>Ad-Free Experience</span>
-                            </li>
-                        </ul>
-
-                        <button class="plan-btn premium-btn">Get Started</button>
-                    </div>
-                </div>
-
-                <!-- FAQ Section -->
-                <div class="faq-section">
-                    <h3 class="faq-heading">Frequently Asked Questions</h3>
-                    <div class="faq-container">
-                        <div class="faq-item">
-                            <div class="faq-question">
-                                <span>Can I change my plan anytime?</span>
-                                <ion-icon name="chevron-down" class="faq-icon"></ion-icon>
-                            </div>
-                            <div class="faq-answer">
-                                <p>Yes, you can upgrade or downgrade your plan at any time. Changes take effect immediately.</p>
-                            </div>
-                        </div>
-
-                        <div class="faq-item">
-                            <div class="faq-question">
-                                <span>What payment methods do you accept?</span>
-                                <ion-icon name="chevron-down" class="faq-icon"></ion-icon>
-                            </div>
-                            <div class="faq-answer">
-                                <p>We accept all major credit cards, PayPal, and various local payment methods.</p>
-                            </div>
-                        </div>
-
-                        <div class="faq-item">
-                            <div class="faq-question">
-                                <span>Is there a free trial?</span>
-                                <ion-icon name="chevron-down" class="faq-icon"></ion-icon>
-                            </div>
-                            <div class="faq-answer">
-                                <p>Yes! We offer a 7-day free trial for all new users on any plan.</p>
-                            </div>
-                        </div>
-
-                        <div class="faq-item">
-                            <div class="faq-question">
-                                <span>Can I cancel my subscription?</span>
-                                <ion-icon name="chevron-down" class="faq-icon"></ion-icon>
-                            </div>
-                            <div class="faq-answer">
-                                <p>Absolutely. You can cancel your subscription anytime with no cancellation fees.</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </section>
-        </main>
-
-        <footer>
-            <div class="footer-content">
-                <div class="footer-brand">
-                    <span class="footer-logo" style="font-family: 'Montserrat', sans-serif; font-size: 32px; font-weight: bold;">MORIGINAL</span>
-                    <p class="slogan">Movies & TV Shows, Online cinema, Movie database HTML Template.</p>
-                    <div class="social-link">
-                        <a href="#"><ion-icon name="logo-facebook"></ion-icon></a>
-                        <a href="#"><ion-icon name="logo-twitter"></ion-icon></a>
-                        <a href="#"><ion-icon name="logo-instagram"></ion-icon></a>
-                        <a href="#"><ion-icon name="logo-tiktok"></ion-icon></a>
-                        <a href="#"><ion-icon name="logo-youtube"></ion-icon></a>
-                    </div>
-                </div>
-
-                <div class="footer-links">
-                    <ul>
-                        <h4 class="link-heading">Moriginal</h4>
-                        <li class="link-item"><a href="about.html">About us</a></li>
-                        <li class="link-item"><a href="pricing.html">Pricing plans</a></li>
-                        <li class="link-item"><a href="contacts.html">Contacts</a></li>
+                    <ul class="plan-features">
+                        <li><ion-icon name="checkmark-circle"></ion-icon>
+                            <span data-i18n="pricing_basic_f1">HD Quality (720p)</span>
+                        </li>
+                        <li><ion-icon name="checkmark-circle"></ion-icon>
+                            <span data-i18n="pricing_basic_f2">1 Screen at a time</span>
+                        </li>
+                        <li><ion-icon name="checkmark-circle"></ion-icon>
+                            <span data-i18n="pricing_basic_f3">Limited Movie Library</span>
+                        </li>
+                        <li class="disabled"><ion-icon name="close-circle"></ion-icon>
+                            <span data-i18n="pricing_basic_f4">No Live TV</span>
+                        </li>
+                        <li class="disabled"><ion-icon name="close-circle"></ion-icon>
+                            <span data-i18n="pricing_basic_f5">With Ads</span>
+                        </li>
                     </ul>
 
+                    <button class="plan-btn basic-btn" data-i18n="pricing_btn">Get Started</button>
+                </div>
 
+                <!-- STANDARD -->
+                <div class="pricing-card featured">
+                    <div class="popular-badge" data-i18n="pricing_popular_badge">MOST POPULAR</div>
 
-                    <ul>
-                        <h4 class="link-heading">Help</h4>
-                        <li class="link-item"><a href="#">Account & Billing</a></li>
-                        <li class="link-item"><a href="#">Supported Devices</a></li>
-                        <li class="link-item"><a href="#">Accessibility</a></li>
+                    <div class="plan-header">
+                        <h3 class="plan-name" data-i18n="pricing_standard">Standard</h3>
+                        <div class="plan-price">
+                            <span class="currency">$</span>
+                            <span class="amount">9.99</span>
+                            <span class="period" data-i18n="pricing_month">/month</span>
+                        </div>
+                        <p class="plan-description" data-i18n="pricing_standard_desc">Best value for families</p>
+                    </div>
+
+                    <ul class="plan-features">
+                        <li><ion-icon name="checkmark-circle"></ion-icon>
+                            <span data-i18n="pricing_standard_f1">Full HD Quality (1080p)</span>
+                        </li>
+                        <li><ion-icon name="checkmark-circle"></ion-icon>
+                            <span data-i18n="pricing_standard_f2">2 Screens simultaneously</span>
+                        </li>
+                        <li><ion-icon name="checkmark-circle"></ion-icon>
+                            <span data-i18n="pricing_standard_f3">Full Movie Library</span>
+                        </li>
+                        <li><ion-icon name="checkmark-circle"></ion-icon>
+                            <span data-i18n="pricing_standard_f4">Live TV Access</span>
+                        </li>
+                        <li class="disabled"><ion-icon name="close-circle"></ion-icon>
+                            <span data-i18n="pricing_standard_f5">Limited Ads</span>
+                        </li>
                     </ul>
-                </div>
-            </div>
-            <div class="footer-copyright">
-                <div class="copyright">
-                    <p>&copy; copyright 2025 Moriginal</p>
+
+                    <button class="plan-btn standard-btn" data-i18n="pricing_btn">Get Started</button>
                 </div>
 
-                <div class="wrapper">
-                    <a href="#">Privacy policy</a>
+                <!-- PREMIUM -->
+                <div class="pricing-card">
+                    <div class="plan-header">
+                        <h3 class="plan-name" data-i18n="pricing_premium">Premium</h3>
+                        <div class="plan-price">
+                            <span class="currency">$</span>
+                            <span class="amount">14.99</span>
+                            <span class="period" data-i18n="pricing_month">/month</span>
+                        </div>
+                        <p class="plan-description" data-i18n="pricing_premium_desc">Ultimate experience</p>
+                    </div>
+
+                    <ul class="plan-features">
+                        <li><ion-icon name="checkmark-circle"></ion-icon>
+                            <span data-i18n="pricing_premium_f1">4K Ultra HD Quality</span>
+                        </li>
+                        <li><ion-icon name="checkmark-circle"></ion-icon>
+                            <span data-i18n="pricing_premium_f2">4 Screens simultaneously</span>
+                        </li>
+                        <li><ion-icon name="checkmark-circle"></ion-icon>
+                            <span data-i18n="pricing_premium_f3">Full Movie Library + Premium</span>
+                        </li>
+                        <li><ion-icon name="checkmark-circle"></ion-icon>
+                            <span data-i18n="pricing_premium_f4">Live TV + Sports</span>
+                        </li>
+                        <li><ion-icon name="checkmark-circle"></ion-icon>
+                            <span data-i18n="pricing_premium_f5">Ad-Free Experience</span>
+                        </li>
+                    </ul>
+
+                    <button class="plan-btn premium-btn" data-i18n="pricing_btn">Get Started</button>
+                </div>
+
+            </div>
+
+            <!-- FAQ -->
+            <div class="faq-section">
+                <h3 class="faq-heading" data-i18n="faq_title">Frequently Asked Questions</h3>
+
+                <div class="faq-container">
+
+                    <div class="faq-item">
+                        <div class="faq-question">
+                            <span data-i18n="faq_q1">Can I change my plan anytime?</span>
+                            <ion-icon name="chevron-down"></ion-icon>
+                        </div>
+                        <div class="faq-answer">
+                            <p data-i18n="faq_a1">Yes, you can upgrade or downgrade anytime. Changes apply immediately.</p>
+                        </div>
+                    </div>
+
+                    <div class="faq-item">
+                        <div class="faq-question">
+                            <span data-i18n="faq_q2">What payment methods do you accept?</span>
+                            <ion-icon name="chevron-down"></ion-icon>
+                        </div>
+                        <div class="faq-answer">
+                            <p data-i18n="faq_a2">We accept credit cards, PayPal, and local payment methods.</p>
+                        </div>
+                    </div>
+
+                    <div class="faq-item">
+                        <div class="faq-question">
+                            <span data-i18n="faq_q3">Is there a free trial?</span>
+                            <ion-icon name="chevron-down"></ion-icon>
+                        </div>
+                        <div class="faq-answer">
+                            <p data-i18n="faq_a3">Yes, we offer a 7-day free trial for new users.</p>
+                        </div>
+                    </div>
+
+                    <div class="faq-item">
+                        <div class="faq-question">
+                            <span data-i18n="faq_q4">Can I cancel my subscription?</span>
+                            <ion-icon name="chevron-down"></ion-icon>
+                        </div>
+                        <div class="faq-answer">
+                            <p data-i18n="faq_a4">Absolutely. Cancel anytime with no fees.</p>
+                        </div>
+                    </div>
+
                 </div>
             </div>
-        </footer>
-    </div>
-    <button id="backToTop" class="back-to-top" aria-label="Back to top" style="display: none;">
+
+        </section>
+    </main>
+
+    <!-- FOOTER -->
+    <footer>
+        <div class="footer-content">
+
+            <div class="footer-brand">
+                <span class="footer-logo">MORIGINAL</span>
+                <p class="slogan" data-i18n="footer_slogan">
+                    Movies & TV Shows, Online cinema, Movie database HTML Template.
+                </p>
+                <div class="social-link">
+                    <a href="#"><ion-icon name="logo-facebook"></ion-icon></a>
+                    <a href="#"><ion-icon name="logo-twitter"></ion-icon></a>
+                    <a href="#"><ion-icon name="logo-instagram"></ion-icon></a>
+                    <a href="#"><ion-icon name="logo-tiktok"></ion-icon></a>
+                    <a href="#"><ion-icon name="logo-youtube"></ion-icon></a>
+                </div>
+            </div>
+
+            <div class="footer-links">
+                <ul>
+                    <h4 class="link-heading">Moriginal</h4>
+                    <li><a href="about.html" data-i18n="footer_about_us">About us</a></li>
+                    <li><a href="pricing.html" data-i18n="footer_pricing">Pricing plans</a></li>
+                    <li><a href="contacts.html" data-i18n="footer_contacts">Contacts</a></li>
+                </ul>
+
+                <ul>
+                    <h4 class="link-heading" data-i18n="footer_help">Help</h4>
+                    <li><a href="#" data-i18n="footer_account">Account & Billing</a></li>
+                    <li><a href="#" data-i18n="footer_devices">Supported Devices</a></li>
+                    <li><a href="#" data-i18n="footer_accessibility">Accessibility</a></li>
+                </ul>
+            </div>
+
+        </div>
+
+        <div class="footer-copyright">
+            <p data-i18n="footer_copyright">© copyright 2025 Moriginal</p>
+            <a href="privacy.html" data-i18n="footer_privacy">Privacy policy</a>
+        </div>
+    </footer>
+
+</div>
+
+<button id="backToTop" class="back-to-top">
     <ion-icon name="chevron-up-outline"></ion-icon>
-    </button>
+</button>
 
-    <script src="./assets/js/main.js"></script>
-    <script src="./assets/js/lightDark.js"></script>
-    <script src="./assets/js/pricing.js"></script>
-    <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
-    <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+<!-- SCRIPTS -->
+<script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+<script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+<script src="./assets/js/language.js"></script>
+<script src="./assets/js/main.js"></script>
+<script src="./assets/js/lightDark.js"></script>
 <script src="./assets/js/back-to-top.js"></script>
+
 </body>
 </html>

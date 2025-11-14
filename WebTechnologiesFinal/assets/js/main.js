@@ -20,9 +20,11 @@ const searchBarIsActive = () => navbarForm.classList.toggle('active');
 
 navbarSearchBtn.addEventListener('click', searchBarIsActive);
 navbarFormCloseBtn.addEventListener('click', searchBarIsActive);
-  const signInLink = document.querySelector('.navbar-signin');
-  const registerBox = document.getElementById('registerBox');
-  const closeBtn = registerBox.querySelector('.close');
+
+
+const signInLink = document.querySelector('.navbar-signin');
+const registerBox = document.getElementById('registerBox');
+const closeBtn = registerBox.querySelector('.close');
 
 
   signInLink.addEventListener('click', (e) => {
@@ -35,28 +37,27 @@ navbarFormCloseBtn.addEventListener('click', searchBarIsActive);
   });
 
  
-  const passwordInput = document.getElementById('password');
-  const message = document.getElementById('passwordMessage');
+const passwordInput = document.getElementById('password');
+const message = document.getElementById('passwordMessage');
 
-  passwordInput.addEventListener('input', () => {
-    const v = passwordInput.value;
+passwordInput.addEventListener('input', () => {
+  const v = passwordInput.value;
 
-    const hasUppercase   = /[A-Z]/.test(v);
-    const hasNumber      = /\d/.test(v);
-    const hasLength      = v.length >= 8;
-   
-    const hasSpecialChar = /[^\da-zA-Z]/.test(v) && !/\s/.test(v);
+  const hasUppercase = /[A-Z]/.test(v);
+  const hasNumber = /\d/.test(v);
+  const hasLength = v.length >= 8;
+  const hasSpecialChar = /[^\da-zA-Z]/.test(v) && !/\s/.test(v);
 
-    if (hasUppercase && hasNumber && hasLength && hasSpecialChar) {
-      message.textContent = "Strong password";
-      message.classList.remove('invalid');
-      message.classList.add('valid');
-    } else {
-      message.textContent = "Password must have: 8+ chars, 1 uppercase, 1 number, 1 symbol";
-      message.classList.remove('valid');
-      message.classList.add('invalid');
-    }
-  });
+  if (hasUppercase && hasNumber && hasLength && hasSpecialChar) {
+    message.textContent = translations[currentLang]["password_strong"];
+    message.classList.remove('invalid');
+    message.classList.add('valid');
+  } else {
+    message.textContent = translations[currentLang]["password_requirements"];
+    message.classList.remove('valid');
+    message.classList.add('invalid');
+  }
+});
 
   
   const togglePassword = document.getElementById('togglePassword');
@@ -122,7 +123,7 @@ navbarFormCloseBtn.addEventListener('click', searchBarIsActive);
     setTimeout(() => message.remove(), 200); 
   }
   
-  const trailerModal = document.getElementById('trailerModal');
+const trailerModal = document.getElementById('trailerModal');
 const trailerFrame = document.getElementById('trailerFrame');
 const closeTrailer = document.querySelector('.close-trailer');
 
@@ -161,7 +162,6 @@ window.addEventListener('click', (e) => {
 });
 
 document.addEventListener("DOMContentLoaded", () => {
-  // 🌐 Переключатель языкового меню
   const langToggle = document.getElementById("languageToggle");
   const langMenu = document.querySelector(".language-menu");
 
@@ -170,20 +170,20 @@ document.addEventListener("DOMContentLoaded", () => {
     return;
   }
 
-  // Открыть / закрыть меню при клике на кнопку 
+
   langToggle.addEventListener("click", (e) => {
     e.stopPropagation();
     langMenu.classList.toggle("active");
   });
 
-  // Закрыть меню при клике вне его
+
   window.addEventListener("click", (e) => {
     if (!langMenu.contains(e.target) && e.target !== langToggle) {
       langMenu.classList.remove("active");
     }
   });
 
-  // Выбор языка
+
   document.querySelectorAll(".language-btn").forEach((btn) => {
     btn.addEventListener("click", (e) => {
       const lang = e.target.dataset.lang;
@@ -203,17 +203,15 @@ document.addEventListener("DOMContentLoaded", () => {
   const yearSelect = document.querySelector(".filter-dropdowns .year");
   const radioButtons = document.querySelectorAll(".filter-radios input[type='radio']");
 
-  // 🔍 Search
   searchForm.addEventListener("submit", function (e) {
     e.preventDefault();
     applyFilters();
   });
 
-  // 🔄 Filter on select change
+  
   genreSelect.addEventListener("change", applyFilters);
   yearSelect.addEventListener("change", applyFilters);
 
-  // 🔘 Sort on radio change
   radioButtons.forEach(radio => {
     radio.addEventListener("change", applyFilters);
   });
@@ -236,21 +234,19 @@ document.addEventListener("DOMContentLoaded", () => {
       return matchesSearch && matchesGenre && matchesYear;
     });
 
-    // 🔄 Sort movies
     if (selectedSort === "newest") {
       filteredMovies.sort((a, b) => {
         const yearA = parseInt(a.querySelector(".year").textContent);
         const yearB = parseInt(b.querySelector(".year").textContent);
-        return yearB - yearA; // newest first
+        return yearB - yearA; 
       });
     } else if (selectedSort === "popular") {
       filteredMovies.sort((a, b) => {
         const ratingA = parseFloat(a.querySelector(".rating span").textContent);
         const ratingB = parseFloat(b.querySelector(".rating span").textContent);
-        return ratingB - ratingA; // highest rating first
+        return ratingB - ratingA; 
       });
     } else if (selectedSort === "featured") {
-      // Custom rule — let's assume featured = rating > 8.5
       filteredMovies.sort((a, b) => {
         const ratingA = parseFloat(a.querySelector(".rating span").textContent);
         const ratingB = parseFloat(b.querySelector(".rating span").textContent);
@@ -260,13 +256,10 @@ document.addEventListener("DOMContentLoaded", () => {
       });
     }
 
-    // 🧱 Clear and display filtered/sorted movies
     const moviesGrid = document.querySelector(".movies-grid");
     moviesGrid.innerHTML = "";
     filteredMovies.forEach(card => moviesGrid.appendChild(card));
   }
-
-  // 📆 Helper function to handle year ranges
   function checkYearRange(selected, year) {
     const y = parseInt(year);
     if (selected === "all years") return true;
@@ -278,14 +271,13 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 });
 
-
   document.addEventListener("DOMContentLoaded", function() {
     const searchForm = document.getElementById("searchForm");
     const searchInput = document.getElementById("searchInput");
     const movieCards = document.querySelectorAll(".movie-card");
 
     searchForm.addEventListener("submit", function(e) {
-        e.preventDefault(); // Prevent page reload
+        e.preventDefault(); 
         const query = searchInput.value.toLowerCase().trim();
 
         movieCards.forEach(card => {
@@ -293,9 +285,9 @@ document.addEventListener("DOMContentLoaded", () => {
             const genre = card.querySelector(".genre").textContent.toLowerCase();
 
             if (title.includes(query) || genre.includes(query)) {
-                card.style.display = "block"; // show
+                card.style.display = "block"; 
             } else {
-                card.style.display = "none"; // hide
+                card.style.display = "none"; 
             }
         });
     });
@@ -306,7 +298,6 @@ const themeIcon = document.getElementById("themeIcon");
 const body = document.body;
 const brandName = document.getElementById("brandName").querySelector("span");
 
-// 🕶 Load previous theme if saved
 if (localStorage.getItem("theme") === "light") {
   body.classList.add("light-mode");
   themeIcon.setAttribute("name", "moon-outline");
@@ -318,11 +309,122 @@ themeToggle.addEventListener("click", () => {
 
   if (body.classList.contains("light-mode")) {
     themeIcon.setAttribute("name", "moon-outline");
-    brandName.style.color = "black"; // light mode → dark text
+    brandName.style.color = "black"; 
     localStorage.setItem("theme", "light");
   } else {
     themeIcon.setAttribute("name", "sunny-outline");
-    brandName.style.color = "white"; // dark mode → white text
+    brandName.style.color = "white";
     localStorage.setItem("theme", "dark");
   }
+});
+
+
+const buttons = document.querySelectorAll(".language-btn");
+let translations = {};
+let currentLang = "en";
+
+async function loadTranslations() {
+  try {
+    const res = await fetch("assets/js/lang.json");
+    translations = await res.json();
+  } catch (e) {
+    console.error("Ошибка загрузки lang.json:", e);
+  }
+}
+
+function setLanguage(lang) {
+  if (!translations[lang]) return;
+
+  document.querySelectorAll("[data-i18n]").forEach(el => {
+    const key = el.getAttribute("data-i18n");
+    const translation = translations[lang][key];
+    if (translation) el.textContent = translation;
+  });
+
+
+  document.querySelectorAll("[data-i18n-placeholder]").forEach(el => {
+    const key = el.getAttribute("data-i18n-placeholder");
+    const translation = translations[lang][key];
+    if (translation) el.placeholder = translation;
+  });
+
+  currentLang = lang;
+  localStorage.setItem("lang", lang);
+
+
+  updateRadioHighlightDelayed();
+}
+
+function updateRadioHighlight() {
+  const active = document.querySelector(".filter-radios input:checked");
+  const bg = document.querySelector(".checked-radio-bg");
+
+  if (active && bg) {
+    const label = active.nextElementSibling;
+    bg.style.width = label.offsetWidth + "px";
+    bg.style.left = label.offsetLeft + "px";
+  }
+}
+
+function updateRadioHighlightDelayed() {
+  setTimeout(updateRadioHighlight, 20);
+}
+
+
+buttons.forEach(btn => {
+  btn.addEventListener("click", () => {
+    const lang = btn.dataset.lang;
+    setLanguage(lang);
+
+  
+    const langMenu = document.querySelector(".language-menu");
+    if (langMenu) langMenu.classList.remove("active");
+  });
+});
+
+
+
+window.addEventListener("DOMContentLoaded", async () => {
+  await loadTranslations();
+
+  const savedLang = localStorage.getItem("lang") || "en";
+  setLanguage(savedLang);
+
+  updateRadioHighlightDelayed();
+});
+
+document.querySelectorAll('.filter-radios input')
+  .forEach(radio => radio.addEventListener('change', updateRadioHighlight));
+
+
+
+
+document.addEventListener("DOMContentLoaded", () => {
+
+    const signInLink = document.querySelector(".navbar-signin");
+    const registerBox = document.getElementById("registerBox");
+
+    if (!signInLink || !registerBox) {
+        console.warn("Login modal not found on this page.");
+        return;
+    }
+
+    const closeBtn = registerBox.querySelector(".close");
+
+    
+    signInLink.addEventListener("click", (e) => {
+        e.preventDefault();
+        registerBox.style.display = "block";
+    });
+
+   
+    closeBtn.addEventListener("click", () => {
+        registerBox.style.display = "none";
+    });
+
+    window.addEventListener("click", (e) => {
+        if (e.target === registerBox) {
+            registerBox.style.display = "none";
+        }
+    });
 });

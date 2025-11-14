@@ -1,216 +1,309 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
     <link rel="stylesheet" href="./assets/css/main.css">
     <link rel="stylesheet" href="./assets/css/media.css">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="./assets/css/contacts.css">
     <link rel="stylesheet" href="./assets/css/variable.css">
-    <title>MORIGINAL | Contact Us</title>
+
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@100;400;600;700;900&display=swap" rel="stylesheet">
+
+    <title>MORIGINAL | Contacts</title>
 </head>
+
 <body>
 
-    <div class="container">
+<div class="container">
 
-        <header>
-            <div class="navbar">
-                <button class="navbar-menu-btn active">
-                    <span class="one"></span>
-                    <span class="two"></span>
-                    <span class="three"></span>
-                </button>
+    <!-- HEADER -->
+    <header>
+        <div class="navbar">
 
-                <a href="index.html" class="navbar-brand" id="brandName">
-                    <span style="font-family: 'Montserrat', sans-serif; font-size: 24px; font-weight: bold;">MORIGINAL</span>
-                </a>
+            <!-- MENU BUTTON -->
+            <button class="navbar-menu-btn active">
+                <span class="one"></span>
+                <span class="two"></span>
+                <span class="three"></span>
+            </button>
 
-                <nav class="">
-                    <ul class="navbar-nav">
-                        <li><a href="index.html" class="navbar-link">Home</a></li>
-                        <li><a href="about.html" class="navbar-link">About Us</a></li>
-                        <li><a href="contacts.html" class="navbar-link">Contacts</a></li>
-                        <li><a href="pricing.html" class="navbar-link">Pricing Plans</a></li>
-                    </ul>
-                </nav>
+            <!-- BRAND -->
+            <a href="index.html" class="navbar-brand" id="brandName">
+                <span style="font-family:'Montserrat'; font-size:24px; font-weight:bold;">MORIGINAL</span>
+            </a>
 
-                <div class="navbar-actions">
-                    <form action="#" class="navbar-form">
-                        <input type="text" name="search" placeholder="I'm looking for ..." class="navbar-form-search">
-                        <button class="navbar-form-btn">
-                            <ion-icon name="search-outline"></ion-icon>
-                        </button>
-                        <button class="navbar-form-close">
-                            <ion-icon name="close-circle-outline"></ion-icon>
-                        </button>
-                    </form>
+            <!-- NAVIGATION -->
+            <nav>
+                <ul class="navbar-nav">
+                    <li><a href="index.html" class="navbar-link" data-i18n="nav_home"></a></li>
+                    <li><a href="about.html" class="navbar-link" data-i18n="nav_about"></a></li>
+                    <li><a href="contacts.html" class="navbar-link" data-i18n="nav_contacts"></a></li>
+                    <li><a href="pricing.html" class="navbar-link" data-i18n="nav_pricing"></a></li>
+                </ul>
+            </nav>
 
-                    <button id="themeToggle" class="theme-toggle-btn" aria-label="Switch theme">
-                        <ion-icon name="sunny-outline" id="themeIcon"></ion-icon>
-                    </button>
+            <!-- ACTIONS -->
+            <div class="navbar-actions">
 
+                <!-- SEARCH -->
+                <form class="navbar-form">
+                    <input type="text" class="navbar-form-search"
+                           data-i18n-placeholder="search_placeholder"
+                           placeholder="I'm looking for ...">
 
-                    <button class="navbar-search-btn">
+                    <button type="submit" class="navbar-form-btn">
                         <ion-icon name="search-outline"></ion-icon>
                     </button>
 
-                    <a href="#" class="navbar-signin">
-                        <span>Sign in</span>
-                        <ion-icon name="log-in-outline"></ion-icon>
-                    </a>
+                    <button type="button" class="navbar-form-close">
+                        <ion-icon name="close-circle-outline"></ion-icon>
+                    </button>
+                </form>
+
+                <button class="navbar-search-btn">
+                    <ion-icon name="search-outline"></ion-icon>
+                </button>
+
+                <!-- THEME SWITCH -->
+                <button id="themeToggle" class="theme-toggle-btn">
+                    <ion-icon id="themeIcon" name="sunny-outline"></ion-icon>
+                </button>
+
+                <!-- LANG SWITCH -->
+                <div class="language-dropdown">
+                    <button id="languageToggle" class="language-toggle-btn">
+                        <ion-icon name="globe-outline"></ion-icon>
+                    </button>
+
+                    <div class="language-menu">
+                        <button class="language-btn" data-lang="en">EN</button>
+                        <button class="language-btn" data-lang="ru">RU</button>
+                        <button class="language-btn" data-lang="kz">KZ</button>
+                    </div>
+                </div>
+
+                <!-- SIGN IN -->
+                <a href="#" class="navbar-signin" id="openLogin">
+                    <span data-i18n="sign_in"></span>
+                    <ion-icon name="log-in-outline"></ion-icon>
+                </a>
+
+                <!-- LOGIN MODAL -->
+                <div id="registerBox" class="register-box">
+                    <form id="loginForm">
+                        <span class="close">&times;</span>
+
+                        <h2 data-i18n="login_title"></h2>
+
+                        <div class="input-box">
+                            <span class="icon"><ion-icon name="mail-open-outline"></ion-icon></span>
+                            <input type="email" required>
+                            <label data-i18n="email"></label>
+                        </div>
+
+                        <div class="input-box">
+                            <span class="icon"><ion-icon name="lock-closed-outline"></ion-icon></span>
+                            <input type="password" required>
+                            <label data-i18n="password"></label>
+                            <ion-icon id="togglePassword" name="eye-outline" class="toggle-eye"></ion-icon>
+                        </div>
+
+                        <div class="remember-forgot">
+                            <label><input type="checkbox"><span data-i18n="remember_me"></span></label>
+                            <a href="#" data-i18n="forgot_password"></a>
+                        </div>
+
+                        <div class="button-wrapper">
+                            <button class="confetti-button" data-i18n="login_button"></button>
+                        </div>
+
+                        <div class="register-link">
+                            <p>
+                                <span data-i18n="no_account"></span>
+                                <a href="#" data-i18n="register"></a>
+                            </p>
+                        </div>
+                    </form>
+                </div>
+
+            </div>
+        </div>
+    </header>
+
+
+    <!-- MAIN -->
+    <main>
+        <section class="contacts-section">
+
+            <h2 class="section-heading" data-i18n="contact_heading"></h2>
+
+            <div class="contacts-container">
+
+                <!-- LEFT SIDE INFO -->
+                <div class="contact-info">
+
+                    <div class="contact-card">
+                        <div class="contact-icon"><ion-icon name="location-outline"></ion-icon></div>
+                        <h3 data-i18n="contact_address_title"></h3>
+                        <p data-i18n="contact_address_text"></p>
+                    </div>
+
+                    <div class="contact-card">
+                        <div class="contact-icon"><ion-icon name="call-outline"></ion-icon></div>
+                        <h3 data-i18n="contact_phone_title"></h3>
+                        <p data-i18n="contact_phone_1"></p>
+                        <p data-i18n="contact_phone_2"></p>
+                    </div>
+
+                    <div class="contact-card">
+                        <div class="contact-icon"><ion-icon name="mail-outline"></ion-icon></div>
+                        <h3 data-i18n="contact_email_title"></h3>
+                        <p data-i18n="contact_email_1"></p>
+                        <p data-i18n="contact_email_2"></p>
+                    </div>
+
+                    <div class="contact-card">
+                        <div class="contact-icon"><ion-icon name="time-outline"></ion-icon></div>
+                        <h3 data-i18n="contact_hours_title"></h3>
+                        <p data-i18n="contact_hours_weekdays"></p>
+                        <p data-i18n="contact_hours_weekend"></p>
+                    </div>
+
+                </div>
+
+                <!-- CONTACT FORM -->
+                <div class="contact-form-container">
+                    <h3 data-i18n="contact_send_message"></h3>
+
+                    <form class="contact-form">
+
+                        <div class="form-group">
+                            <div class="input-wrapper">
+                                <input type="text" id="name" required>
+                                <label data-i18n="contact_your_name"></label>
+                                <ion-icon name="person-outline" class="input-icon"></ion-icon>
+                            </div>
+
+                            <div class="input-wrapper">
+                                <input type="email" id="email" required>
+                                <label data-i18n="contact_your_email"></label>
+                                <ion-icon name="mail-outline" class="input-icon"></ion-icon>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <div class="input-wrapper">
+                                <input type="text" id="subject" required>
+                                <label data-i18n="contact_subject"></label>
+                                <ion-icon name="chatbubble-outline" class="input-icon"></ion-icon>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <div class="input-wrapper textarea-wrapper">
+                                <textarea id="message" rows="5" required></textarea>
+                                <label data-i18n="contact_message"></label>
+                                <ion-icon name="create-outline" class="input-icon"></ion-icon>
+                            </div>
+                        </div>
+
+                        <button type="submit" class="submit-btn">
+                            <span data-i18n="contact_button"></span>
+                            <ion-icon name="send-outline"></ion-icon>
+                        </button>
+
+                    </form>
                 </div>
             </div>
-        </header>
 
-        <main>
-            <section class="contacts-section">
-                <h2 class="section-heading">Contact Us</h2>
 
-                <div class="contacts-container">
-                    <div class="contact-info">
-                        <div class="contact-card">
-                            <div class="contact-icon">
-                                <ion-icon name="location-outline"></ion-icon>
-                            </div>
-                            <h3>Our Address</h3>
-                            <p>Astana IT University <br>Astana, Kazakhstan 010000</p>
-                        </div>
+            <!-- MAP -->
+            <div class="map-section">
+                <h3 data-i18n="contact_map_title"></h3>
 
-                        <div class="contact-card">
-                            <div class="contact-icon">
-                                <ion-icon name="call-outline"></ion-icon>
-                            </div>
-                            <h3>Phone Number</h3>
-                            <p>+7 (777) 616-8374</p>
-                            <p>+7 (727) 987-6543</p>
-                        </div>
-
-                        <div class="contact-card">
-                            <div class="contact-icon">
-                                <ion-icon name="mail-outline"></ion-icon>
-                            </div>
-                            <h3>Email Address</h3>
-                            <p>support@moriginal.kz</p>
-                            <p>info@moriginal.kz</p>
-                        </div>
-
-                        <div class="contact-card">
-                            <div class="contact-icon">
-                                <ion-icon name="time-outline"></ion-icon>
-                            </div>
-                            <h3>Working Hours</h3>
-                            <p>Monday - Friday: 9:00 - 18:00</p>
-                            <p>Saturday - Sunday: 10:00 - 22:00</p>
-                        </div>
+                <div class="map-container">
+                    <div class="map-placeholder">
+                        <ion-icon name="map-outline"></ion-icon>
+                        <p data-i18n="contact_map_text"></p>
+                        <span data-i18n="contact_map_location"></span>
                     </div>
-
-                    <div class="contact-form-container">
-                        <h3>Send us a Message</h3>
-                        <form class="contact-form">
-                            <div class="form-group">
-                                <div class="input-wrapper">
-                                    <input type="text" id="name" name="name" required>
-                                    <label for="name">Your Name</label>
-                                    <ion-icon name="person-outline" class="input-icon"></ion-icon>
-                                </div>
-                                <div class="input-wrapper">
-                                    <input type="email" id="email" name="email" required>
-                                    <label for="email">Your Email</label>
-                                    <ion-icon name="mail-outline" class="input-icon"></ion-icon>
-                                </div>
-                            </div>
-
-                            <div class="form-group">
-                                <div class="input-wrapper">
-                                    <input type="text" id="subject" name="subject" required>
-                                    <label for="subject">Subject</label>
-                                    <ion-icon name="chatbubble-outline" class="input-icon"></ion-icon>
-                                </div>
-                            </div>
-
-                            <div class="form-group">
-                                <div class="input-wrapper textarea-wrapper">
-                                    <textarea id="message" name="message" rows="5" required></textarea>
-                                    <label for="message">Your Message</label>
-                                    <ion-icon name="create-outline" class="input-icon"></ion-icon>
-                                </div>
-                            </div>
-
-                            <button type="submit" class="submit-btn">
-                                <span>Send Message</span>
-                                <ion-icon name="send-outline"></ion-icon>
-                            </button>
-                        </form>
-                    </div>
-                </div>
-
-                <div class="map-section">
-                    <h3>Find Us Here</h3>
-                    <div class="map-container">
-                        <div class="map-placeholder">
-                            <ion-icon name="map-outline"></ion-icon>
-                            <p>Interactive Map Location</p>
-                            <span>Astana, Kazakhstan</span>
-                        </div>
-                    </div>
-                </div>
-            </section>
-        </main>
-
-x        <footer>
-            <div class="footer-content">
-                <div class="footer-brand">
-                    <span class="footer-logo" style="font-family: 'Montserrat', sans-serif; font-size: 32px; font-weight: bold;">MORIGINAL</span>
-                    <p class="slogan">Movies & TV Shows, Online cinema, Movie database HTML Template.</p>
-                    <div class="social-link">
-                        <a href="#"><ion-icon name="logo-facebook"></ion-icon></a>
-                        <a href="#"><ion-icon name="logo-twitter"></ion-icon></a>
-                        <a href="#"><ion-icon name="logo-instagram"></ion-icon></a>
-                        <a href="#"><ion-icon name="logo-tiktok"></ion-icon></a>
-                        <a href="#"><ion-icon name="logo-youtube"></ion-icon></a>
-                    </div>
-                </div>
-
-                <div class="footer-links">
-                    <ul>
-                        <h4 class="link-heading">Moriginal</h4>
-                        <li class="link-item"><a href="about.html">About us</a></li>
-                        <li class="link-item"><a href="pricing.html">Pricing plans</a></li>
-                        <li class="link-item"><a href="contacts.html">Contacts</a></li>
-                    </ul>
-
-                    <ul>
-                        <h4 class="link-heading">Help</h4>
-                        <li class="link-item"><a href="#">Account & Billing</a></li>
-                        <li class="link-item"><a href="#">Supported Devices</a></li>
-                        <li class="link-item"><a href="#">Accessibility</a></li>
-                    </ul>
                 </div>
             </div>
-            <div class="footer-copyright">
-                <div class="copyright">
-                    <p>&copy; copyright 2025 Moriginal</p>
-                </div>
 
-                <div class="wrapper">
-                    <a href="privacy.html">Privacy policy</a>
+        </section>
+    </main>
+
+
+    <!-- FOOTER -->
+    <footer>
+        <div class="footer-content">
+
+            <div class="footer-brand">
+                <span class="footer-logo" style="font-family:'Montserrat'; font-size:32px; font-weight:bold;">MORIGINAL</span>
+                <p class="slogan" data-i18n="footer_slogan"></p>
+
+                <div class="social-link">
+                    <a href="#"><ion-icon name="logo-facebook"></ion-icon></a>
+                    <a href="#"><ion-icon name="logo-twitter"></ion-icon></a>
+                    <a href="#"><ion-icon name="logo-instagram"></ion-icon></a>
+                    <a href="#"><ion-icon name="logo-tiktok"></ion-icon></a>
+                    <a href="#"><ion-icon name="logo-youtube"></ion-icon></a>
                 </div>
             </div>
-        </footer>
-    </div>
 
-     <button id="backToTop" class="back-to-top" aria-label="Back to top" style="display: none;">
+            <div class="footer-links">
+                <ul>
+                    <h4 class="link-heading">Moriginal</h4>
+                    <li><a href="about.html" data-i18n="footer_about_us"></a></li>
+                    <li><a href="pricing.html" data-i18n="footer_pricing"></a></li>
+                    <li><a href="contacts.html" data-i18n="footer_contacts"></a></li>
+                </ul>
+
+                <ul>
+                    <h4 class="link-heading" data-i18n="footer_help"></h4>
+                    <li><a href="#" data-i18n="footer_account"></a></li>
+                    <li><a href="#" data-i18n="footer_devices"></a></li>
+                    <li><a href="#" data-i18n="footer_accessibility"></a></li>
+                </ul>
+            </div>
+
+        </div>
+
+        <div class="footer-copyright">
+            <div class="copyright">
+                <p data-i18n="footer_copyright"></p>
+            </div>
+
+            <div class="wrapper">
+                <a href="privacy.html" data-i18n="footer_privacy"></a>
+            </div>
+        </div>
+
+    </footer>
+
+</div>
+
+
+<!-- BUTTON -->
+<button id="backToTop" class="back-to-top">
     <ion-icon name="chevron-up-outline"></ion-icon>
-    </button>
+</button>
 
-    <script src="./assets/js/main.js"></script>
-    <script src="./assets/js/lightDark.js"></script>
-    <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
-    <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
-<script src="./assets/js/back-to-top.js"></script>
+<!-- ICONS -->
+<script type="module"
+        src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+<script nomodule
+        src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+
+<!-- YOUR JS -->
+<script src="assets/js/lightDark.js"></script>
+<script src="assets/js/about.js"></script>
+<script src="assets/js/language.js"></script>
+<script src="assets/js/main.js"></script>
+<script src="assets/js/back-to-top.js"></script>
 
 </body>
 </html>

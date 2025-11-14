@@ -4,8 +4,9 @@
 
 header, nav {
     background: var(--rich-black-fogra-29);
+    position: relative;
+    z-index: 10000;
 }
-
 
 .navbar,
 .banner,
@@ -34,7 +35,7 @@ header, nav {
     display: flex;
     justify-content: space-between;
     align-items: center;
-}a
+}
 
 
 .navbar-menu-btn {
@@ -67,8 +68,6 @@ nav {
 }
 
 
-
-
 .indicator {
   display: inline-flex;
   align-items: center;
@@ -85,7 +84,6 @@ nav {
   animation: pulse 1.4s infinite ease-in-out;
 }
 
-/* Эффект пульсации (можно убрать, если не нужен) */
 @keyframes pulse {
   0% {
     transform: scale(1);
@@ -110,7 +108,6 @@ nav {
 
 .navbar-form {
     position: relative;
-    margin-right: 50px;
 }
 
 
@@ -157,6 +154,7 @@ nav {
     display: flex;
     align-items: center;
     font-size: var(--fs-sm);
+    white-space: nowrap;
 }
 
 
@@ -172,12 +170,13 @@ nav {
     color: var(--light-azure);
 }
 
-/* 🌐 Language dropdown styling */
 .language-dropdown {
   position: relative;
   display: flex;
   align-items: center;
   justify-content: center;
+  margin-left: 5px;
+  margin-right: 15px;
 }
 
 .language-toggle-btn {
@@ -198,7 +197,7 @@ nav {
 
 .language-menu {
   position: absolute;
-  top: 36px; /* расстояние между иконкой и меню */
+  top: 36px; 
   right: 0;
   background: var(--oxford-blue);
   border: 1px solid rgba(255, 255, 255, 0.2);
@@ -1113,6 +1112,11 @@ ul .link-item:not(:last-child) {
 .close-trailer:hover {
   color: #ff6961;
 }
+
+.language-menu {
+    z-index: 9999 !important;
+}
+
 
 @keyframes fadeIn {
   from { opacity: 0; transform: scale(0.9); }
